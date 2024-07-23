@@ -16,7 +16,6 @@ $results = $query->get_result();
 $totalQuery = $db->query("SELECT * FROM payment");
 $total = $totalQuery->num_rows;
 $pages = ceil($total / $perPage);
-
 ?>
 
 
@@ -71,9 +70,9 @@ $pages = ceil($total / $perPage);
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
 <div class="card shadow mr-5">
-  <div class="card-header py-4"> 
+  <div class="card-header py-0"> 
     <h2 class="display-6 text-center">SALES</h2>
   
     <h6 class="ml-2 font-weight-bold row">
