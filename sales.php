@@ -3,8 +3,19 @@ include('includes/header.php');
 include('Staff_navbar.php');
 include('scripts.php');
 
-$query = "SELECT * FROM payment";
-$results = mysqli_query($db, $query);
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$perPage = isset($_GET['per_page']) && (int)$_GET['per_page'] <= 50 ? (int)$_GET['per_page'] : 4;
+$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+
+
+$query = $db->prepare("SELECT * FROM payment LIMIT ?, ?");
+$query->bind_param("ii", $start, $perPage);
+$query->execute();
+$results = $query->get_result();
+
+$totalQuery = $db->query("SELECT * FROM payment");
+$total = $totalQuery->num_rows;
+$pages = ceil($total / $perPage);
 
 ?>
 
@@ -88,10 +99,9 @@ $results = mysqli_query($db, $query);
             <th>Receipt</th>
           </tr>
           <tr class="">
-              <?php
-              while($row = mysqli_fetch_assoc($results))
-              {
-              ?>
+
+              <?php while ($row = $results->fetch_assoc()) { ?>
+
               <td><?php echo $row['CustomerName']?></td>
               <td><?php echo $row['Stock_Name']?></td>
               <td><?php echo $row['Price']?></td>
@@ -104,6 +114,15 @@ $results = mysqli_query($db, $query);
               }
           ?>
       </table>
+      <div class="d-flex justify-content-center">
+        <ul class="pagination">
+          <?php for ($i = 1; $i <= $pages; $i++) : ?>
+          <li class="page-item">
+            <a class="page-link" href="?page=<?php echo $i; ?>&per_page=<?php echo $perPage; ?>"><?php echo $i; ?></a>
+          </li>
+          <?php endfor; ?>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
