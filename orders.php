@@ -3,8 +3,20 @@ include('includes/header.php');
 include('Staff_navbar.php');
 include('scripts.php');
 
-$query = "SELECT * FROM orders";
-$result = mysqli_query($db, $query);
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$perPage = isset($_GET['per_page']) && (int)$_GET['per_page'] <= 50 ? (int)$_GET['per_page'] : 4;
+$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+
+
+$query = $db->prepare("SELECT * FROM orders LIMIT ?, ?");
+$query->bind_param("ii", $start, $perPage);
+$query->execute();
+$results = $query->get_result();
+
+$totalQuery = $db->query("SELECT * FROM orders");
+$total = $totalQuery->num_rows;
+$pages = ceil($total / $perPage);
+
 ?>
 
 <div class="modal fade" id="add_customer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -81,10 +93,9 @@ $result = mysqli_query($db, $query);
           </tr>
 
               <tr>
-            <?php
-              while($row = mysqli_fetch_assoc($result))
-              {
-            ?>
+
+              <?php while ($row = $results->fetch_assoc()) { ?>
+
             <td><?php echo $row['Stock_Name']?></td>
             <td><?php echo $row['Price']?></td>
             <td><?php echo $row['Quantity']?></td>
@@ -98,6 +109,15 @@ $result = mysqli_query($db, $query);
             ?>
           </tr>
       </table>
+      <div class="d-flex justify-content-center">
+        <ul class="pagination">
+          <?php for ($i = 1; $i <= $pages; $i++) : ?>
+          <li class="page-item">
+            <a class="page-link" href="?page=<?php echo $i; ?>&per_page=<?php echo $perPage; ?>"><?php echo $i; ?></a>
+          </li>
+          <?php endfor; ?>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
