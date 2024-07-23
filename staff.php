@@ -47,7 +47,7 @@ $output = mysqli_query($db, $query);
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
   <div class="card shadow mb-4 mr-5">
     <div class="card-header py-4">
       <h6 class="m-0 font-weight-bold text-primary row">
@@ -79,9 +79,7 @@ $output = mysqli_query($db, $query);
               <td><?php echo htmlspecialchars($row['Email']); ?></td>
               <td><?php echo htmlspecialchars($row['Position']); ?></td>
               <td><?php echo htmlspecialchars($row['Outlet_Name']); ?></td>
-              <td>
-                <a href="Staff_edit.php?Id=<?php echo $row['Employee_id']; ?>" class="btn btn-success">Edit</a>
-              </td>
+              <td><a href="StaffUpdate.php?id=<?php echo $row['Employee_id'];?>" class="btn btn-success">Edit</td>
               <td>
                 <form action="scripts.php" method="POST">
                   <input type="hidden" name="staff_delete_id" value="<?php echo $row['Employee_id']; ?>">

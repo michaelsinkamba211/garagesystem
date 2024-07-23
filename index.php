@@ -17,7 +17,7 @@ include('Staff_navbar.php');
 </a>
 
 
-  <div class="row mr-5 mt-2">
+  <div class="row mr-5 mt-5">
 
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-primary shadow h-200 py-4">
