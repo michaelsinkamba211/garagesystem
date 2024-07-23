@@ -40,7 +40,7 @@ $result = mysqli_query($db, $query);
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
 <div class="card shadow mb-4 mr-5">
   <div class="card-header py-4">
     <h6 class="m-0 font-weight-bold text-primary row">
