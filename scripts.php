@@ -491,22 +491,16 @@ if(isset($_POST['submit'])) {
     echo "Employee information updated successfully.";
 }
 
-// if (isset($_POST['submit'])){
-//     $id = $_POST['id'];
-//     $Name = $_POST['Name'];
-//     $Email = $_POST['Email'];
-//     $Phone = $_POST['Phone'];
-//     $EnrollNumber = $_POST['EnrollNumber'];
-//     $DateOfAdmission = $_POST['DateOfAdmission'];
-//     $requete = $con -> prepare("UPDATE employee 
-//     SET 
-//     Name = '$Name',
-//     Email = '$Email',
-//     Phone = '$Phone',
-//     EnrollNumber = '$EnrollNumber',
-//     DateOfAdmission = '$DateOfAdmission'
-//     WHERE Id = $id");
-//     $res = $requete -> execute();
-//     header("location:students_list.php");
-// }
+$id =$_GET['id'];
+$query = "SELECT * FROM employee WHERE id = '$id'";
+$result = mysqli_query($db, $query);
+$row = mysqli_fetch_assoc($result);
+
+if(isset($_POST['updatebtn']))
+{
+    $newTask = $_POST['task'];
+    $query = "UPDATE taskname SET TaskName = '$newTask' WHERE id = '$id'";
+    $query_run = mysqli_query($db, $query);
+    header('location: index.php');
+}
 ?>

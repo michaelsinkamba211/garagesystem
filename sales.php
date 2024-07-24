@@ -72,7 +72,7 @@ $pages = ceil($total / $perPage);
 
 <div class="container-fluid mt-5">
 <div class="card shadow mr-5">
-  <div class="card-header py-0"> 
+  <div class="card-header py-0">
     <h2 class="display-6 text-center">SALES</h2>
   
     <h6 class="ml-2 font-weight-bold row">
