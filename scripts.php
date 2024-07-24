@@ -490,17 +490,4 @@ if(isset($_POST['submit'])) {
 
     echo "Employee information updated successfully.";
 }
-
-$id =$_GET['id'];
-$query = "SELECT * FROM employee WHERE id = '$id'";
-$result = mysqli_query($db, $query);
-$row = mysqli_fetch_assoc($result);
-
-if(isset($_POST['updatebtn']))
-{
-    $newTask = $_POST['task'];
-    $query = "UPDATE taskname SET TaskName = '$newTask' WHERE id = '$id'";
-    $query_run = mysqli_query($db, $query);
-    header('location: index.php');
-}
 ?>
