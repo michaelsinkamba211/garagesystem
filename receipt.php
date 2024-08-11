@@ -22,24 +22,25 @@ if(isset($_POST['update_btn']))
 ?>
 <div class="container-fluid d-flex justify-content-center">
 
-<div class="card shadow  w-100">
-  <div class="card-header py-0">
-  <h6 class="ml-2 font-weight-bold row">
-  <a class="link l-20" href="Staff.php">
-            <button type="button" class="btn btn-danger pull-left mt-2 mr-2">BACK</button></a>
-         <hr><br>
-    </h6>
-<table class="table table-bordered ">
-<h2 class="display-6 text-center">RECEIPT</h2>
-<thead>
-    <tr class="text-column ">
-        <td>Customer's Name:</td>
-        <td>TPIN:</td>
-    </tr>
-</thead>
-    </table>
-</div>
+    <div class="card shadow  w-100">
+        <div class="card-header py-0">
+            <h6 class="ml-2 font-weight-bold row">
+                <a class="link l-20" href="Staff.php">
+                    <button type="button" class="btn btn-danger pull-left mt-2 mr-2">BACK</button>
+                </a>
+                <hr><br>
+            </h6>
+            <table class="table table-bordered ">
+                <h2 class="display-6 text-center">RECEIPT</h2>
+                <thead>
+                    <tr class="text-column ">
+                        <td>Customer's Name:</td>
+                        <td>TPIN:</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
-  </div>
 </div>
- </div>
+</div>
+</div>
