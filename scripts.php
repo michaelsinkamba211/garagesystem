@@ -9,10 +9,8 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
@@ -336,19 +334,15 @@
       }
 
 
-
-
       if(isset($_POST['admin_btn']))
       {
           
-          $Name = $_POST['name'];
-          $Email = $_POST['email'];
-          $Password = $_POST['password'];
-          $Position = $_POST['position'];
-          $Outlet = $_POST['outlet'];
-          
-          $password = md5($password);
-          $query = "INSERT INTO Employee (Employee_Name,Email,Password,Position,Outlet_Name) VALUES ('$Name', '$Email', '$Password', '$Position','$Outlet')";
+          $Name = $_POST['customer_name'];
+          $Item= $_POST['item'];
+          $full_Amount = $_POST['price'];
+          $desc= $_POST['description'];
+          $Deadline = $_POST['deadline'];
+          $query = "INSERT INTO part_payment (full_Name,Item,full_Amount,Description,Deadline) VALUES ('$Name', '$Item', '$full_Amount', '$desc', '$Deadline')";
           $query_run = mysqli_query($db, $query);
       
           if($query_run)
@@ -370,7 +364,6 @@
         $query_run = mysqli_query($db, $query);
     
         if($row = mysqli_fetch_assoc($query_run)) {
-            // Check the user's role and redirect to the appropriate dashboard
             if ($row['Position'] === 'Admin') {
                 header('Location: index.php');
                 $_SESSION['Welcome'] = "Welcome Back";

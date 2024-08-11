@@ -33,7 +33,7 @@ if(isset($_POST['update_btn']))
 
     
 <div class="container w-50">
-  <form method="POST" action="update.ph" enctype="multipart/form-data">
+  <form method="POST" action="update.php" enctype="multipart/form-data">
     <div class="mb-3">
             <div>
             <label for="first-name" class="form-label">Full Name</label>

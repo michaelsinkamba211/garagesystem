@@ -46,8 +46,8 @@ $result = mysqli_query($db, $query);
   <h2 class="display-6 text-center mt-2">OUTLETS</h2>
     <h6 class="m-0 font-weight-bold text-primary row">
     <a class="link" href="index.php">
-            <button type="button" class="btn btn-danger pull-left">BACK</button></a>
-            <button type="button" class="btn btn-secondary ml-2" data-toggle="modal" data-target="#addadminprofile">
+            <button type="button" class="btn btn-danger pull-left mb-2">BACK</button></a>
+            <button type="button" class="btn btn-secondary ml-2 mb-2" data-toggle="modal" data-target="#addadminprofile">
               Add Outlet
             </button>
     </h6>

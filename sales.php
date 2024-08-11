@@ -1,5 +1,5 @@
 <?php
-include('includes/header.php'); 
+include('header.php'); 
 include('Staff_navbar.php');
 include('scripts.php');
 
@@ -28,7 +28,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="modal-body">
             <div class="form-group">
                 <label class="text-dark text-weight-bold">Customer</label>
-                <select class="form-control" id="customer_id" name="customer">
+                <select class="form-control dropdown" id="customer_id" name="customer">
                   <option value="">Select Customer</option>
                   <?php foreach ($customers as $customer): ?>
                     <option value="<?php echo htmlspecialchars($customer['CustomerName']); ?>">

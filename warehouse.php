@@ -42,8 +42,8 @@ $result = mysqli_query($db, $query);
 
 <div class="container-fluid mt-5">
 <div class="card shadow mb-4 mr-5">
-  <div class="card-header py-4">
-    <h6 class="m-0 font-weight-bold text-primary row">
+  <div class="card-header py-2">
+    <h6 class="ml-2 font-weight-bold row">
     <a class="link" href="index.php">
             <button type="button" class="btn btn-danger pull-left mr-2">BACK</button></a>
             <button type="button" class="btn btn-secondary pull-right" data-toggle="modal" data-target="#addadminprofile">

@@ -11,12 +11,13 @@ $row = mysqli_fetch_assoc($result);
 if(isset($_POST['loans_btn']))
 {
     $newName = $_POST['name'];
+    $newContact = $_POST['Contact'];
     $newLoanAmount = $_POST['loan_amount'];
     $newLoanDate = $_POST['loan_date'];
     $newPaid = $_POST['paid'];
     $newReturnAmount = $_POST['return_amount'];
     $newReturnDate = $_POST['return_date'];
-    $query = "UPDATE loans SET borrower_name = '$newName', loan_amount = '$newLoanAmount', loan_date = '$newLoanDate', Paid = '$newPaid', return_amount = '$newReturnAmount', due_date = '$newReturnDate' WHERE loan_id = '$id'";
+    $query = "UPDATE loans SET borrower_name = '$newName', Contact = '$newContact', loan_amount = '$newLoanAmount', loan_date = '$newLoanDate', Paid = '$newPaid', return_amount = '$newReturnAmount', due_date = '$newReturnDate' WHERE loan_id = '$id'";
     $query_run = mysqli_query($db, $query);
     header('location: loan.php');
 }
@@ -39,6 +40,10 @@ if(isset($_POST['loans_btn']))
             <div>
             <label for="first-name" class="form-label">Full Name</label>
             <input type="text" name="name" value="<?php echo $row['borrower_name'];?>" class="form-control" required >
+            </div>
+            <div>
+            <label for="first-name" class="form-label">Contact</label>
+            <input type="text" name="Contact" value="<?php echo $row['Contact'];?>" class="form-control" required >
             </div>
             <div>
             <label for="last-name" class="form-label">Loan Amount</label>

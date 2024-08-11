@@ -7,6 +7,7 @@ include('scripts.php');
 $query = "SELECT 
     loan_id,
     borrower_name,
+    Contact,
     loan_amount,
     loan_date,
     Paid,
@@ -81,6 +82,7 @@ $output = mysqli_query($db, $query);
         <thead>
           <tr class="text-dark font-weight-bold">
             <th>Full Name</th>
+            <th>Contact</th>
             <th>Loan Amount</th>
             <th>Date</th>
             <th>Paid</th>
@@ -94,6 +96,7 @@ $output = mysqli_query($db, $query);
           <?php while($row = mysqli_fetch_assoc($output)): ?>
             <tr>
               <td><?php echo htmlspecialchars($row['borrower_name']); ?></td>
+              <td><?php echo htmlspecialchars($row['Contact']); ?></td>
               <td><?php echo htmlspecialchars($row['loan_amount']); ?></td>
               <td><?php echo htmlspecialchars($row['loan_date']); ?></td>
               <td><?php echo htmlspecialchars($row['Paid']); ?></td>
