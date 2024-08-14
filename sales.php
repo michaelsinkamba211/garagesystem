@@ -85,7 +85,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <a class="link" href="customer.php">
           <button type="button" class="btn btn-primary mt-2">View Customer</button>
         </a>
-        <a class="link" href="Part_payment.php">
+        <a class="link" href="part_payment.php">
           <button type="button" class="btn btn-warning mt-2 ml-2">Part Payment</button>
         </a>
       </h6>
