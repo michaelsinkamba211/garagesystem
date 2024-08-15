@@ -14,7 +14,7 @@
 <script src="js/demo/chart-pie-demo.js"></script>
 
 <?php
-    $db = mysqli_connect("localhost", "root", "", "garageDB");
+    $db = mysqli_connect("localhost", "root", "", "harmtedy");
     if(!$db){
         die("connection error!");
     }
@@ -114,22 +114,89 @@
       }
 
 
+      if (isset($_POST['savebtn'])) {
+    
+        // Fetch data from Stafforders
+        $query = "SELECT * FROM Stafforders";
+        $result = mysqli_query($db, $query);
+        $row = mysqli_fetch_assoc($result);
+    
+        if ($row) {
+            $customer = $row['CustomerName'];
+            $Product_Name = $row['Stock_Name'];
+            $amount = $row['Price'];
+            $Quantity = $_POST['quantity'];  // Use the quantity from the form
+            $date = $_POST['date'];
+            $Outlet_Name = $row['Outlet_Name'];
+    
+            // Insert the data into the payment table
+            $query = "INSERT INTO payment (`CustomerName`, `Stock_Name`, `Price`, `Quantity`, `Date_Sold`, `Outlet_Name`) 
+                      VALUES ('$customer', '$Product_Name', '$amount', '$Quantity', '$date', '$Outlet_Name')";
+            $query_run = mysqli_query($db, $query);
+    
+            if ($query_run) {
+                // Update the Stafforders table to reduce the quantity
+                $query = "UPDATE Stafforders SET Quantity = Quantity - $Quantity WHERE OrderID_id = '$id'";
+                $query_run = mysqli_query($db, $query);
+    
+                if ($query_run) {
+                    $_SESSION['updated'] = "Transaction successful, and quantity updated.";
+                    header('Location: sales.php');
+                } else {
+                    $_SESSION['not_updated'] = "Transaction successful, but failed to update quantity in Stafforders.";
+                    header('Location: sales.php');
+                }
+            } else {
+                $_SESSION['not_updated'] = "Failed to insert data into payment table.";
+                header('Location: sales.php');
+            }
+        } else {
+            $_SESSION['not_updated'] = "Order not found in Stafforders.";
+            header('Location: sales.php');
+        }
+    }
+    
+    //   if(isset($_POST['savebtn']))
+    //   {
+    //       $customer = $_POST['customer'];
+    //       $Product_Name = $_POST['product_Name'];
+    //       $amount = $_POST['amount'];
+    //       $date = $_POST['date'];
+    //       $Outlet_Name = $_POST['outlet'];
+    //       $Quantity = $_POST['quantity'];
+    //       $id = $_POST['no.'];
+      
+    //       $query = "INSERT INTO payment (`CustomerName`, `Stock_Name`, `Price`, `Quantity`, `Date_Sold`, `Outlet_Name`) VALUES ('$customer', '$Product_Name', '$amount', '$Quantity', '$date', '$Outlet_Name')";
+    //       $query_run = mysqli_query($db, $query);
 
-      if(isset($_POST['savebtn']))
+    //       $query = "UPDATE orders w SET w.Quantity = w.Quantity - $Quantity WHERE OrderID_id= '$id' ";
+    //       $query_run = mysqli_query($db, $query);
+      
+    //       if($query_run)
+    //       {
+    //           $_SESSION['updated'];
+    //           header('Location: sales.php');
+    //       } else
+    //       {
+    //           $_SESSION['not_updated'];
+    //           header('Location: sales.php');
+    //       }
+    //   }
+
+          if(isset($_POST['savebtn']))
       {
           $customer = $_POST['customer'];
           $Product_Name = $_POST['product_Name'];
           $amount = $_POST['amount'];
-          $date = $_POST['date'];
-          $Outlet_Name = $_POST['outlet'];
           $Quantity = $_POST['quantity'];
-          $id = $_POST['no.'];
+          $Model = $_POST['model'];
+        //   $date = $_POST['date'];
+          $Outlet_Name = $_POST['outlet'];
       
-          $query = "INSERT INTO payment (`CustomerName`, `Stock_Name`, `Price`, `Quantity`, `Date_Sold`, `Outlet_Name`) VALUES ('$customer', '$Product_Name', '$amount', '$Quantity', '$date', '$Outlet_Name')";
-          $query_run = mysqli_query($db, $query);
-
-          $query = "UPDATE orders w SET w.Quantity = w.Quantity - $Quantity WHERE OrderID_id= '$id' ";
-          $query_run = mysqli_query($db, $query);
+          $query = "INSERT INTO payment (CustomerName`, `Stock_Name`, `Price`, `Quantity`, `Outlet_Name)
+          SELECT product_name = '$Product_Name', price = '$amount', quantity = '$Quantity', Model = '$Model', Outlet_Name = '$Outlet_Name'
+          FROM Stafforders";
+          
       
           if($query_run)
           {
@@ -223,46 +290,91 @@
           }
       }
 
-      if(isset($_POST['order_btn']))
-      {
-          $Name = $_POST['product_name'];
-          $Price = $_POST['price'];
-          $Quantity = $_POST['quantity'];
-          $Outlet_Name = $_POST['outlet_name'];
-          $Order_Date = $_POST['order_date'];
-          $Discount = $_POST['discount'];
-          
-          
-          $query = ("INSERT INTO orders (Stock_Name, Price, Quantity, Discount, Outlet_Name, Order_Date)
-          SELECT w.Stock_Name, w.Price,'$Quantity', w.Discount,'$Outlet_Name', '$Order_Date'
-          FROM stock w
-          WHERE w.Stock_Name='$Name' AND w.Price='$Price'");
-           $query_run = mysqli_query($db, $query);
+    //   if (isset($_POST['order_btn'])) {
+    //     $product_name = $_POST['product_name'];
+    //     $price = $_POST['price'];
+    //     $quantity = $_POST['quantity'];
+    //     $description = $_POST['description'];
+    //     $outlet_name = $_POST['outlet_name'];
+    
+    //     $query = "INSERT INTO stafforders (product_name, price, quantity, description, outlet_name, status) 
+    //               VALUES ('$product_name', '$price', '$quantity', '$description', '$outlet_name', 'pending')";
+    //     $query_run = mysqli_query($db, $query);
+    
+    //     if ($query_run) {
+    //         echo "Order placed successfully.";
+    //     } else {
+    //         echo "Failed to place order.";
+    //     }
+    // }
 
-           $query = "UPDATE stock w SET w.Quantity = w.Quantity - $Quantity WHERE w.Stock_Name='$Name' AND w.Price='$Price'";
-           $query_run = mysqli_query($db, $query);
 
-           if (Quantity == 0){
-            $query = "DELETE FROM stock WHERE Stock_Name='$Name' AND Price='$Price'";
-            $query_run = mysqli_query($db, $query);
-           }
-            else {
-                # code...
-            }
-            
-           
-      
+    if(isset($_POST['order_btn']))
+    {
+        $product_name = $_POST['product_name'];
+        $price = $_POST['price'];
+        $quantity = $_POST['quantity'];
+        $model = $_POST['model'];
+        $description = $_POST['description'];
+    
+        // Correct SQL Query
+        $query = "INSERT INTO stafforders (`Stock_Name`, `price`, `quantity`, `Model`, `description`)
+                  SELECT '$product_name', '$price', '$quantity', '$model', '$description'
+                  FROM stock 
+                  WHERE Stock_Name = '$product_name' AND Model = '$model'";
+        $query_run = mysqli_query($db, $query); // Assuming $db is your database connection
+    
         if($query_run)
         {
-            $_SESSION['updated'];
+            $_SESSION['updated'] = "Order placed successfully.";
             header('Location: orders.php');
-        }else
-            {
-                $_SESSION['not updated'];
-                header('Location: index.php');
-            }
+            exit;
+        } else
+        {
+            $_SESSION['not_updated'] = "Failed to place order.";
+            header('Location: orders.php');
+            exit;
+        }
+    }
+    
+    // manage_orders.php
+    if (isset($_POST['accept'])) {
+        $order_id = $_POST['order_id'];
+    
+        // Update order status to 'accepted'
+        $query = "UPDATE stafforders SET status = 'accepted' WHERE id = '$order_id'";
+        mysqli_query($db, $query);
+    
+        // Fetch order details
+        $query = "SELECT * FROM stafforders WHERE id = '$order_id'";
+        $result = mysqli_query($db, $query);
+        $order = mysqli_fetch_assoc($result);
+    
+        // Update stock quantity
+        $query = "UPDATE stock SET Quantity = Quantity - {$order['quantity']} WHERE Model = '{$order['Model']}'";
+        $query_run = mysqli_query($db, $query);
+    
+        // Insert into orders table
+        $query = "INSERT INTO orders (Stock_Name, Price, Quantity, Description) 
+                  VALUES ('{$order['Stock_Name']}', '{$order['price']}', '{$order['quantity']}', 
+                  '{$order['description']}')";
+        mysqli_query($db, $query);
+    
+        header('Location: despatchItems.php');
+        exit;
+    }
+    
+    if (isset($_POST['decline'])) {
+        $order_id = $_POST['order_id'];
+        $query = "UPDATE stafforders SET status = 'declined' WHERE id = '$order_id'";
+        mysqli_query($db, $query);
+        header('Location: despatchItems.php');
+        exit;
+    }
+      
 
-      }
+
+
 
 
       if(isset($_POST['Stock_btn']))
@@ -270,11 +382,11 @@
           $Name = $_POST['product_name'];
           $Price = $_POST['price'];
           $Quantity = $_POST['quantity'];
-          $Discount = $_POST['discount'];
+          $Model = $_POST['model'];
           $Description = $_POST['description'];
       
           $query = "INSERT INTO stock (
-          Stock_Name,Price,Quantity,Discount,Description) VALUES ('$Name', '$Price', '$Quantity', '$Discount', '$Description') ";
+          Stock_Name,Price,Quantity,Model,Description) VALUES ('$Name', '$Price', '$Quantity', '$Model', '$Description') ";
           $query_run = mysqli_query($db, $query);
       
           if($query_run)

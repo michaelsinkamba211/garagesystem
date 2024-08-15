@@ -6,6 +6,10 @@ include('scripts.php');
 $query = $db->prepare("SELECT * FROM stock");
 $query->execute();
 $result = $query->get_result();
+
+
+$query = "DELETE FROM stock  WHERE quantity = 0 ";
+$query_run = mysqli_query($db, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,8 +67,8 @@ $result = $query->get_result();
                                 <input type="text" name="quantity" class="form-control" placeholder="quantity">
                             </div>
                             <div class="form-group">
-                                <label>Discount</label>
-                                <input type="text" name="discount" class="form-control" placeholder="discount">
+                                <label>Model</label>
+                                <input type="text" name="model" class="form-control" placeholder="Model of the item">
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
@@ -102,7 +106,7 @@ $result = $query->get_result();
                             data-target="#addadminprofile">
                             Add Stock
                         </button>
-                        <a class="link l-20" href="warehouse.php">
+                        <a class="link l-20" href="despatchItems.php">
                             <button type="button" class="btn btn-primary">Despatch Products</button>
                         </a>
                     </h6>
@@ -115,7 +119,7 @@ $result = $query->get_result();
                                 <th>Product Name</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
-                                <th>Discount</th>
+                                <th>Model</th>
                                 <th>Description</th>
                             </tr>
                         </thead>
@@ -127,7 +131,7 @@ $result = $query->get_result();
                                 <td><?php echo $row['Stock_Name']?></td>
                                 <td><?php echo $row['Price']?></td>
                                 <td><?php echo $row['Quantity']?></td>
-                                <td><?php echo $row['Discount']?></td>
+                                <td><?php echo $row['Model']?></td>
                                 <td><?php echo $row['Description']?></td>
                             </tr>
                             <?php endwhile; ?>

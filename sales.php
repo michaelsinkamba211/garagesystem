@@ -15,7 +15,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 $items = array();
-$query = "SELECT Stock_Name FROM payment";
+$query = "SELECT product_name FROM stafforders";
 $result = mysqli_query($db, $query);
 while ($row = mysqli_fetch_assoc($result)) {
   $items[] = $row;
@@ -55,8 +55,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <select class="form-control dropdown" id="customer_id" name="customer">
                             <option value="">Select Item</option>
                             <?php foreach ($items as $item): ?>
-                            <option value="<?php echo htmlspecialchars($item['Stock_Name']); ?>">
-                                <?php echo htmlspecialchars($item['Stock_Name']); ?>
+                            <option value="<?php echo htmlspecialchars($item['product_name']); ?>">
+                                <?php echo htmlspecialchars($item['product_name']); ?>
                             </option>
                             <?php endforeach; ?>
                         </select>
@@ -70,20 +70,20 @@ while ($row = mysqli_fetch_assoc($result)) {
                             placeholder="Enter Amount">
                     </div>
                     <div class="form-group">
-                        <label class="text-dark text-weight-bold">Date</label>
-                        <input type="date" name="date" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-dark text-weight-bold">Outlet Name</label>
-                        <input type="text" name="outlet" class="form-control" placeholder="Outlet">
-                    </div>
-                    <div class="form-group">
                         <label class="text-dark text-weight-bold">Quantity</label>
                         <input type="text" name="quantity" class="form-control" placeholder="Quantity">
                     </div>
                     <div class="form-group">
-                        <label class="text-dark text-weight-bold">No.</label>
-                        <input type="text" name="no." class="form-control" placeholder="Quantity">
+                        <label class="text-dark text-weight-bold">Model</label>
+                        <input type="text" name="model" class="form-control" placeholder="Item's Model">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label class="text-dark text-weight-bold">Date</label>
+                        <input type="date" name="date" class="form-control">
+                    </div> -->
+                    <div class="form-group">
+                        <label class="text-dark text-weight-bold">Outlet Name</label>
+                        <input type="text" name="outlet" class="form-control" placeholder="Outlet">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -122,6 +122,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <table id="salesTable" class="table table-bordered text-center text-dark">
                 <thead>
                     <tr class="text-dark text-weight-bold">
+                        <th>SSN</th>
                         <th>Customer</th>
                         <th>Product</th>
                         <th>Price</th>
@@ -134,6 +135,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <tbody>
                     <?php while ($row = $results->fetch_assoc()): ?>
                     <tr>
+                        <td><?php echo htmlspecialchars($row['Payment_id']); ?></td>
                         <td><?php echo htmlspecialchars($row['CustomerName']); ?></td>
                         <td><?php echo htmlspecialchars($row['Stock_Name']); ?></td>
                         <td><?php echo htmlspecialchars($row['Price']); ?></td>
