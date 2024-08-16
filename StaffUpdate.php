@@ -1,4 +1,5 @@
 <?php
+include('footer.php');
 include('includes/header.php'); 
 include('Staff_navbar.php');
 include('scripts.php');
@@ -15,6 +16,8 @@ if(isset($_POST['update_btn']))
     $newPassword = $_POST['password'];
     $newOutlet = $_POST['outlet'];
     $newPosition = $_POST['position'];
+    $password = md5($password_1);
+
     $query = "UPDATE employee SET Employee_Name = '$newName', Email = '$newEmail', Password = '$newPassword', Outlet_Name = '$newOutlet', Position = '$newPosition' WHERE Employee_id = '$id'";
     $query_run = mysqli_query($db, $query);
     header('location: Staff.php');

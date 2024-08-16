@@ -1,4 +1,5 @@
 <?php
+include('footer.php');
 include('scripts.php');
 include('includes/header.php'); 
 include('Staff_navbar.php');

@@ -27,7 +27,7 @@ $query = "SELECT
     (SELECT COUNT(Stock_Name) FROM stock) AS total_products";
 
 $result = mysqli_query($db, $query);
-$row = mysqli_fetch_assoc($result);
+$row = mysqli_fetch_assoc($results);
 
 ?>
 

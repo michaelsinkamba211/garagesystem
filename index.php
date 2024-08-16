@@ -1,4 +1,5 @@
 <?php
+include('includes/footer.php');
 include('header.php');
 include('scripts.php');
 include('Staff_navbar.php'); 
@@ -116,7 +117,7 @@ include('Staff_navbar.php');
                     </div>
                 </div>
             </div>
-
+            
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-primary shadow h-200 py-4">
                     <div class="card-body">

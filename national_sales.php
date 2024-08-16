@@ -47,7 +47,7 @@ $result = mysqli_query($db, $query);
                 </tr>
                 <tr>
                     <?php
-            while ($row = mysqli_fetch_assoc($result))
+            while ($row = mysqli_fetch_assoc($results))
             {
             ?>
                     <td class="text-weight-bold"><?Php echo $row['total_products'];?></td>

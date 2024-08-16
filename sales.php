@@ -1,4 +1,5 @@
 <?php
+include('footer.php'); 
 include('header.php'); 
 include('Staff_navbar.php');
 include('scripts.php');
@@ -17,7 +18,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 $items = array();
 $query = "SELECT product_name FROM stafforders";
 $result = mysqli_query($db, $query);
-while ($row = mysqli_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($results)) {
   $items[] = $row;
 }
 ?>
@@ -127,6 +128,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <th>Product</th>
                         <th>Price</th>
                         <th>Quantity</th>
+                        <th>Model</th>
+                        <th>Description</th>
                         <th>Date</th>
                         <th>Outlet</th>
                         <th>Receipt</th>

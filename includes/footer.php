@@ -1,23 +1,12 @@
-
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
-          </div>
+<footer class="sticky-footer bg-white fixed-bottom">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; WebStars Developers</span>
         </div>
-      </footer>
-      <!-- End of Footer -->
-      </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
     </div>
-    <!-- End of Content Wrapper -->
-
-    
+</footer>
+</div>
+</div>
+</div>
 </body>
-
 </html>

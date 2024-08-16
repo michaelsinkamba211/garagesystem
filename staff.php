@@ -1,4 +1,5 @@
 <?php
+include('footer.php');
 include('includes/header.php'); 
 include('Staff_navbar.php');
 include('scripts.php');
@@ -53,8 +54,6 @@ $output = mysqli_query($db, $query);
                             placeholder="Enter Password"
                             required="required">
                     </div>
-                    <input type="hidden" name="position" value="Staff">
-                    <div class="form-group">
                         <label>Outlet Name</label>
                         <input
                             type="text"
@@ -63,6 +62,8 @@ $output = mysqli_query($db, $query);
                             placeholder="Enter Outlet Name"
                             required="required">
                     </div>
+                    <input type="hidden" name="position" value="Staff">
+                    <div class="form-group">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

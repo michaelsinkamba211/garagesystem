@@ -14,7 +14,7 @@
 <script src="js/demo/chart-pie-demo.js"></script>
 
 <?php
-    $db = mysqli_connect("localhost", "root", "", "harmtedy");
+    $db = mysqli_connect("localhost", "root", "", "garagedb");
     if(!$db){
         die("connection error!");
     }
@@ -51,9 +51,10 @@
           $Password = $_POST['password'];
           $Position = $_POST['position'];
           $Outlet = $_POST['outlet'];
-      
-          $query = "INSERT INTO Employee (
-          Employee_Name,Email,Password,Position,Outlet_Name) VALUES ('$Name', '$Email', '$Password', '$Position', '$Outlet') ";
+          $password = md5($Password);
+
+          $query = "INSERT INTO employee (
+          Employee_Name,Email,Password,Outlet_Name,Position) VALUES ('$Name', '$Email', '$password', '$Outlet', '$Position') ";
           $query_run = mysqli_query($db, $query);
       
           if($query_run)
@@ -155,33 +156,6 @@
             header('Location: sales.php');
         }
     }
-    
-    //   if(isset($_POST['savebtn']))
-    //   {
-    //       $customer = $_POST['customer'];
-    //       $Product_Name = $_POST['product_Name'];
-    //       $amount = $_POST['amount'];
-    //       $date = $_POST['date'];
-    //       $Outlet_Name = $_POST['outlet'];
-    //       $Quantity = $_POST['quantity'];
-    //       $id = $_POST['no.'];
-      
-    //       $query = "INSERT INTO payment (`CustomerName`, `Stock_Name`, `Price`, `Quantity`, `Date_Sold`, `Outlet_Name`) VALUES ('$customer', '$Product_Name', '$amount', '$Quantity', '$date', '$Outlet_Name')";
-    //       $query_run = mysqli_query($db, $query);
-
-    //       $query = "UPDATE orders w SET w.Quantity = w.Quantity - $Quantity WHERE OrderID_id= '$id' ";
-    //       $query_run = mysqli_query($db, $query);
-      
-    //       if($query_run)
-    //       {
-    //           $_SESSION['updated'];
-    //           header('Location: sales.php');
-    //       } else
-    //       {
-    //           $_SESSION['not_updated'];
-    //           header('Location: sales.php');
-    //       }
-    //   }
 
           if(isset($_POST['savebtn']))
       {
@@ -290,24 +264,6 @@
           }
       }
 
-    //   if (isset($_POST['order_btn'])) {
-    //     $product_name = $_POST['product_name'];
-    //     $price = $_POST['price'];
-    //     $quantity = $_POST['quantity'];
-    //     $description = $_POST['description'];
-    //     $outlet_name = $_POST['outlet_name'];
-    
-    //     $query = "INSERT INTO stafforders (product_name, price, quantity, description, outlet_name, status) 
-    //               VALUES ('$product_name', '$price', '$quantity', '$description', '$outlet_name', 'pending')";
-    //     $query_run = mysqli_query($db, $query);
-    
-    //     if ($query_run) {
-    //         echo "Order placed successfully.";
-    //     } else {
-    //         echo "Failed to place order.";
-    //     }
-    // }
-
 
     if(isset($_POST['order_btn']))
     {
@@ -317,12 +273,11 @@
         $model = $_POST['model'];
         $description = $_POST['description'];
     
-        // Correct SQL Query
         $query = "INSERT INTO stafforders (`Stock_Name`, `price`, `quantity`, `Model`, `description`)
                   SELECT '$product_name', '$price', '$quantity', '$model', '$description'
                   FROM stock 
                   WHERE Stock_Name = '$product_name' AND Model = '$model'";
-        $query_run = mysqli_query($db, $query); // Assuming $db is your database connection
+        $query_run = mysqli_query($db, $query);
     
         if($query_run)
         {
@@ -337,7 +292,7 @@
         }
     }
     
-    // manage_orders.php
+
     if (isset($_POST['accept'])) {
         $order_id = $_POST['order_id'];
     
@@ -444,15 +399,40 @@
       }
 
 
-      if(isset($_POST['admin_btn']))
+      if(isset($_POST['partpayment_btn']))
       {
           
-          $Name = $_POST['customer_name'];
+          $Name = $_POST['name'];
           $Item= $_POST['item'];
           $full_Amount = $_POST['price'];
           $desc= $_POST['description'];
           $Deadline = $_POST['deadline'];
+
           $query = "INSERT INTO part_payment (full_Name,Item,full_Amount,Description,Deadline) VALUES ('$Name', '$Item', '$full_Amount', '$desc', '$Deadline')";
+          $query_run = mysqli_query($db, $query);
+      
+          if($query_run)
+          {
+              $_SESSION['updated'];
+              header('Location: part_payment.php');
+          } else
+          {
+              $_SESSION['not updated'];
+              header('Location: part_payment.php');
+          }
+      }
+
+      if(isset($_POST['admin_btn']))
+      {
+          $Name = $_POST['name'];
+          $Email = $_POST['email'];
+          $Password = $_POST['password'];
+          $Position = $_POST['position'];
+          $Outlet = $_POST['outlet'];
+          $password = md5($Password);
+
+          $query = "INSERT INTO employee (
+          Employee_Name,Email,Password,Outlet_Name,Position) VALUES ('$Name', '$Email', '$password', '$Outlet', '$Position') ";
           $query_run = mysqli_query($db, $query);
       
           if($query_run)

@@ -40,7 +40,7 @@ $result = mysqli_query($db, $query);
                         <th>Quantity</th>
                         <th>Model</th>
                         <th>Description</th>
-                        <th>Outlet Name</th>
+                        <th>Outlet</th>
                         <th>Order Date</th>
                         <th>Status</th>
                         <th>Action</th>

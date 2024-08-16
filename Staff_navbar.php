@@ -1,4 +1,5 @@
 <?php
+include('footer.php');
 include('scripts.php'); 
 ?>
 <div id="content">
