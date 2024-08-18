@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmtedy.Store</title>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- fonts icons start-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://kit.fontawesome.com/018d9ba538.js" crossorigin="anonymous"></script>
+
+
+    <!-- fonts  end-->
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,450,500,520,550,600,700,900,1000">
+
+
+    <!-- bootrsap cdn css link -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- styles start-->
+    <link rel="stylesheet" href="./welcome-css/animation.css">
+    <link rel="stylesheet" href="./welcome-css/welcomepage.css">
+    <!-- styles end -->
+    <!-- jQuery -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+
+<style>
+    .product_holder .product_properties strong {
+        width: 130px;
+
+    }
+</style>
+
+<body>
+    <!-- header -->
+
+    <header>
+        <div class="first_header">
+            <div class="essential_container">
+                <div class="logo">
+                    <h1 class="store_logo">
+                        <a href="./index.html">Harmtedy.<span id="special">Store</span></a>
+                    </h1>
+                </div>
+
+                <div class="contacts">
+                    <div class="location">
+                        <span class=" icon"> 
+                            <i class="fa-solid fa-map"></i> 
+                        <a href="#">Lusaka IRinga Mall shop
+                            No.20</a></span>
+
+                    </div>
+
+                    <div class="location">
+                        <span class=" icon"> 
+                            <i class="fa-solid fa-truck"></i>                        <a href="#">We Deliver ContryWide</a></span>
+
+                    </div>
+
+                    <div class="email">
+                        <span class=" icon">
+                            <span class="fa-solid fa-paper-plane "></span>
+                            <a target="_blank"
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=michaelsinkamba211@email.com">
+                                harmtedystore@gmail.com</a>
+                        </span>
+                    </div>
+
+                    <div class="phone">
+                        <span class=" icon">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+260974286888" target="_blank">+2609 742868 88</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="second_header">
+            <div class="nav_container">
+
+
+                <nav>
+
+                    <input type="checkbox" name="" id="menu">
+                    <button class="menu">
+                        <label class="menu2" for="menu">
+                            <!-- <i class="fa-solid fa-bars fa-2xl"></i> -->
+                            <i class="fa-solid fa-bars"></i>
+                            <span>MENU</span>
+                        </label>
+
+                        <div class="appointment">
+                            <a href="#contacts" class="make_apo"> <span>Make An</span> Locate Store</a>
+                        </div>
+                    </button>
+
+                    <div class="phone_hide">
+                        <ul>
+                            <li><a href="./index.html" id="first">home</a></li>
+                            <li><a href="./headsets.html" class="activelink">Airpods</a></li>
+                            <li><a href="./laptops.html">laptops</a></li>
+                            <li><a class="locate_store" href="./contact.html">Locate Store</a></li>
+                        </ul>
+                    </div>
+
+
+
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- body starts -->
+    <section class="gadgets_div">
+        <div class="container-lg text-center">
+
+            <div class="row products_holder justify-co">
+                <!-- prod 1 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <!-- Product Holder -->
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_1">
+                            <div class="col-md-12 prod_image p-0 m-0" id="product_image">
+                                <img src="./productsimages/headsets/airpodspro2.png" alt="Headset Image"
+                                    class="img-fluid product_image_src" id="product_image_src_1">
+                            </div>
+
+                            <div class="col-md-12 product_desc p-0">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">AirPods (2nd Generation)</h5>
+
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Battery Life:</strong> Up to 5 hours</p>
+                                        <p><strong>Noise Cancelling:</strong> <i class="fa-solid fa-times"></i></p>
+                                        <p><strong>Wireless Charging:</strong> <i class="fa-solid fa-times"></i></p>
+                                        <p><strong>Price:</strong> k250</p>
+
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Battery Life (Case):</strong> More than 24 hrs</p>
+                                            <p><strong>Connectivity:</strong> Bluetooth 5.0</p>
+                                            <p><strong>Included Charging Cable:</strong> Lightning to USB-A</p>
+                                            <p><strong>Water Resistance (Earbuds):</strong> <i
+                                                    class="fa-solid fa-times"></i></p>
+
+                                        </div>
+
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success mt-2 w-100 buy_directly"
+                                                id="buy_directly">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product2 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <!-- Product Holder -->
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_1">
+                            <div class="col-md-12 prod_image p-0 m-0" id="product_image">
+                                <img src="./productsimages/headsets/airpods3rdgen.png" alt="Headset Image"
+                                    class="img-fluid product_image_src" id="product_image_src_1">
+                            </div>
+                            <div class="col-md-12 product_desc p-0">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">AirPods (3rd Generation)</h5>
+
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Battery Life:</strong> Up to 6 hours</p>
+                                        <p><strong>Noise Cancelling:</strong> <i class="fa-solid fa-times"></i></p>
+                                        <p><strong>Wireless Charging:</strong> <i class="fa-solid fa-times"></i></p>
+                                        <p><strong>Price:</strong> k300</p>
+
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Water Resistance (Earbuds):</strong> IPX4</p>
+                                            <p><strong>Battery Life (Case):</strong> Up to 30 hours</p>
+                                            <p><strong>Connectivity:</strong> Bluetooth 5.0</p>
+                                            <p><strong>Earbud Weight:</strong> 4.28 grams</p>
+                                            <p><strong>Case Weight:</strong> 37.91 grams</p>
+                                            <p><strong>Included Charging Cable:</strong> Lightning to USB-C</p>
+                                        </div>
+
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success mt-2 w-100 buy_directly"
+                                                id="buy_directly">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 3 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <!-- Product Holder -->
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_1">
+                            <div class="col-md-12 prod_image p-0 m-0" id="product_image">
+                                <img src="./productsimages/headsets/airpodsfirstgene.png" alt="Headset Image"
+                                    class="img-fluid product_image_src" id="product_image_src_1">
+                            </div>
+                            <div class="col-md-12 product_desc p-0">
+
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">AirPods Pro (1st Generation)</h5>
+
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Battery Life:</strong> Up to 4.5 hours</p>
+                                        <p><strong>Noise Cancelling:</strong> <i class="fa-solid fa-check"></i>
+                                        </p>
+                                        <p><strong>Wireless Charging:</strong> <i class="fa-solid fa-times"></i></p>
+                                        <p><strong>Price:</strong> k320</p>
+
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Water Resistance (Earbuds):</strong> IPX4</p>
+
+                                            <p><strong>Battery Life (Case):</strong> More than 24 hours</p>
+                                            <p><strong>Included Charging Cable:</strong> Lightning to USB-C</p>
+                                        </div>
+
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success mt-2 w-100 buy_directly"
+                                                id="buy_directly">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product 4 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <!-- Product Holder -->
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_1">
+                            <div class="col-md-12 prod_image p-0 m-0" id="product_image">
+                                <img src="./productsimages/headsets/airpodspro22.png" alt="Headset Image"
+                                    class="img-fluid product_image_src" id="product_image_src_1">
+                            </div>
+                            <div class="col-md-12 product_desc p-0">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">AirPods Pro (2nd Generation)</h5>
+
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Battery Life:</strong> Up to 6 hours</p>
+                                        <p><strong>Noise Cancelling:</strong> <i class="fa-solid fa-check"></i>
+                                        </p>
+                                        <p><strong>Wireless Charging:</strong> <i class="fa-solid fa-check"></i></p>
+                                        </p>
+                                        <p><strong>Price:</strong> k350</p>
+
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Water Resistance (Earbuds):</strong> IPX4</p>
+                                            <p><strong>Battery Life (Case):</strong> Up to 30 hours</p>
+                                            <p><strong>Connectivity:</strong> Bluetooth 5.3</p>
+                                            <p><strong>Included Charging Cable:</strong> Lightning to USB-C</p>
+                                        </div>
+
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success mt-2 w-100 buy_directly"
+                                                id="buy_directly">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- product 5 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <!-- Product Holder -->
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_1">
+                            <div class="col-md-12 prod_image p-0 m-0" id="product_image">
+                                <img src="./productsimages/headsets/airmax.png" alt="Headset Image"
+                                    class="img-fluid product_image_src" id="product_image_src_1">
+                            </div>
+                            <div class="col-md-12 product_desc p-0">
+                                <div class="card-body product_details">
+
+                                    <div class="card-body product_details">
+                                        <h5 class="card-title product_model mb-3 mt-0 p-0">AirPods Max</h5>
+
+                                        <div class="card-text product_properties p-0">
+                                            <p><strong>Battery Life:</strong> Up to 20 hours</p>
+                                            <p><strong>Noise Cancelling:</strong> <i class="fa-solid fa-check"></i>
+                                            </p>
+                                            <p><strong>Wireless Charging:</strong> <i class="fa-solid fa-times"></i></p>
+                                            <p><strong>Price:</strong> k600</p>
+                                            <div class="hidden_features d-none">
+                                                <p><strong>Connectivity:</strong> Bluetooth 5.0</p>
+                                                <p><strong>Included Charging Cable:</strong> Lightning to USB-C</p>
+                                                <p><strong>Water Resistance (Earbuds):</strong> <i
+                                                        class="fa-solid fa-times"></i></p>
+                                                <p><strong>Transparency Mode:</strong> <i class="fa-solid fa-check"></i>
+                                                </p>
+                                            </div>
+
+                                            <div class="btns_for_buying">
+                                                <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                    data-bs-toggle="modal" data-bs-target="#productModal">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </button>
+
+                                                <button type="button" class="btn btn-success mt-2 w-100 buy_directly"
+                                                    id="buy_directly">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <!-- Content will be filled dynamically -->
+                    <div class="modal_product_image">
+                        <img src="" alt="Product Image" class="img-fluid" id="modal_product_image">
+                    </div>
+                    <div id="modal_product_model" class="mt-3">
+                        <!-- Model name will be dynamically inserted here -->
+                    </div>
+                    <div id="modal_product_details" class="mt-3">
+                        <!-- Product details will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="buy_button">Buy This Item</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- lorem ipsum text -->
+
+    <!-- boostrap cdn with poppper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!-- mansory -->
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+
+
+    <!-- jquery -->
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- external js sheet -->
+    <script src="./welcome-js/script.js"></script>
+    <script src="./welcome-js/animation.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elem = document.querySelector('.products_holder');
+            var msnry = new Masonry(elem, {
+                itemSelector: '.col-12',
+                columnWidth: '.col-12',
+                percentPosition: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>
