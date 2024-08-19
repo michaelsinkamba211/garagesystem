@@ -1,7 +1,7 @@
 <?php
 include('includes/header.php'); 
 include('Staff_navbar.php');
-include('scripts.php');
+include('inludes/scripts.php');
 
 $query = "SELECT * FROM stafforders WHERE status = 'pending'";
 $result = mysqli_query($db, $query);
@@ -11,7 +11,7 @@ $result = mysqli_query($db, $query);
     <div class="card shadow mb-4 mr-5">
         <div class="card-header py-4">
             <h6 class="m-0 font-weight-bold text-primary row">
-                <a class="link" href="index.php">
+                <a class="link" href="warehousestock.php">
                     <button type="button" class="btn btn-danger mr-2" t="t">BACK</button>
                 </a>
                 <button

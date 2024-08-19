@@ -1,8 +1,7 @@
 <?php
-include('footer.php'); 
-include('header.php'); 
+include('includes/header.php'); 
 include('Staff_navbar.php');
-include('scripts.php');
+include('includes/scripts.php');
 
 $query = $db->prepare("SELECT * FROM payment");
 $query->execute();
@@ -16,7 +15,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 $items = array();
-$query = "SELECT product_name FROM stafforders";
+$query = "SELECT Stock_Name FROM stafforders";
 $result = mysqli_query($db, $query);
 while ($row = mysqli_fetch_assoc($results)) {
   $items[] = $row;
@@ -56,8 +55,8 @@ while ($row = mysqli_fetch_assoc($results)) {
                         <select class="form-control dropdown" id="customer_id" name="customer">
                             <option value="">Select Item</option>
                             <?php foreach ($items as $item): ?>
-                            <option value="<?php echo htmlspecialchars($item['product_name']); ?>">
-                                <?php echo htmlspecialchars($item['product_name']); ?>
+                            <option value="<?php echo htmlspecialchars($item['Stock_Name']); ?>">
+                                <?php echo htmlspecialchars($item['Stock_Name']); ?>
                             </option>
                             <?php endforeach; ?>
                         </select>

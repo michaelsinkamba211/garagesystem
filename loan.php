@@ -1,7 +1,7 @@
 <?php
 include('includes/header.php'); 
 include('Staff_navbar.php');
-include('scripts.php');
+include('includes/scripts.php');
 
 
 $query = "SELECT 

@@ -72,8 +72,7 @@ $result = mysqli_query($db, $query);
                     cellspacing="0">
                     <thead>
                         <tr class="text-weight-bold text-dark">
-                            <th>Outlet Name
-                            </th>
+                            <th>Outlet Name</th>
                             <th>Address</th>
                             <th>View Stock</th>
                             <th>Edit</th>
@@ -86,7 +85,6 @@ $result = mysqli_query($db, $query);
             while($row = mysqli_fetch_assoc($result))
             {
             ?>
-
                             <td><?php echo $row['Outlet_Name']; ?></td>
                             <td><?php echo $row['Address'];?></td>
 

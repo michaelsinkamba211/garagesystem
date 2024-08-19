@@ -1,7 +1,7 @@
 <?php
 include('includes/header.php'); 
 include('Staff_navbar.php');
-include('scripts.php');
+include('includes/scripts.php');
 
 $query = "SELECT * FROM customer";
 $result = mysqli_query($db, $query);
@@ -45,6 +45,14 @@ $result = mysqli_query($db, $query);
                             name="Phone_Number"
                             class="form-control"
                             placeholder="Enter Number">
+                    </div>
+                    <div class="form-group">
+                        <label>Branch Name</label>
+                        <input
+                            type="text"
+                            name="branch"
+                            class="form-control"
+                            placeholder="Enter Outlet Name...">
                     </div>
                 </div>
                 <div class="modal-footer">

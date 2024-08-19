@@ -76,7 +76,7 @@ body {
     line-height: 1.5;
     color: whitesmoke;
     text-align: left;
-    background-color: #630644;
+    background-color: whitesmoke;
 }
 
 [tabindex="-1"]:focus {

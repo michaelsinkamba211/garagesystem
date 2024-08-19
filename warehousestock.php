@@ -1,8 +1,7 @@
 <?php
-include('footer.php');
 include('includes/header.php'); 
 include('Staff_navbar.php');
-include('scripts.php');
+include('includes/scripts.php');
 
 $query = $db->prepare("SELECT * FROM stock");
 $query->execute();
@@ -91,7 +90,7 @@ $query_run = mysqli_query($db, $query);
         </div>
 
         <div class="container-fluid">
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4 mr-5">
                 <div class="card-header py-0">
                     <h2 class="display-6 text-center">LUSAKA CENTRAL WAREHOUSE</h2>
                     <h2 class="display-6 text-center">IN STOCK</h2>

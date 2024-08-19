@@ -1,7 +1,6 @@
 <?php
-include('includes/footer.php');
-include('header.php');
-include('scripts.php');
+include('includes/header.php');
+include('includes/scripts.php');
 include('Staff_navbar.php'); 
 ?>
 
@@ -180,6 +179,6 @@ include('Staff_navbar.php');
 
     <!-- Content Row -->
     <?php
-include('scripts.php');
+include('includes/scripts.php');
 include('sorters.php');
 ?>

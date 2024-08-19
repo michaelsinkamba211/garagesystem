@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('includes/header.php');
-include('scripts.php'); 
+include('includes/scripts.php'); 
 ?>
 <!-- <div class="back"> -->
 <div class="container mt-5">
@@ -11,7 +11,6 @@ include('scripts.php');
         <div class="col-xl-6 col-lg-3 col-md-6">
 
             <div class="card o-hidden border shadow-lg col-lg-9">
-                <img src="img/Harmtedy.png" height="200" width="390">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12">

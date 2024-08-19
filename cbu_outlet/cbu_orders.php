@@ -1,13 +1,10 @@
 <?php
-include('includes/header.php'); 
-include('Staff_navbar.php');
-include('includes/scripts.php');
+include('../includes/header.php'); 
+include('../Staff_navbar.php');
+include('../includes/scripts.php');
 
-$query = $db->prepare("SELECT * FROM orders WHERE Outlet = Kabwe Outlet");
-$query->execute();
-$stock_results = $query->get_result();
 
-$query = $db->prepare("SELECT * FROM stafforders WHERE status = 'accepted'");
+$query = $db->prepare("SELECT * FROM stafforders WHERE status = 'accepted' AND Outlet_Name = 'cbu'");
 $query->execute();
 $order_results = $query->get_result();
 ?>
@@ -41,16 +38,18 @@ $order_results = $query->get_result();
                     <div class="form-group">
                         <label class="text-dark text-weight-bold">Quantity</label>
                         <input type="text" name="quantity" class="form-control" placeholder=""></div>
+                        <div class="form-group">
+                        <label class="text-dark text-weight-bold">Model</label>
+                        <input type="text" name="model" class="form-control" placeholder=""></div>
                     <div class="form-group">
                         <label class="text-dark text-weight-bold">Description</label>
                         <input type="text" name="description" class="form-control" placeholder=""></div>
                     <div class="form-group">
-                        <label class="text-dark text-weight-bold">Outlet Name</label>
-                        <input type="text" name="outlet_name" class="form-control" placeholder="item description"></div>
+                        <input type="hidden" name="outlet" value="cbu"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="order_btn" class="btn btn-success">Done</button>
+                    <button type="submit" name="cbu_order_btn" class="btn btn-success">Done</button>
                 </div>
             </form>
         </div>
@@ -59,11 +58,11 @@ $order_results = $query->get_result();
 <div class="container-fluid">
     <div class="card shadow mr-5">
         <div class="card-header py-0">
-            <h2 class="display-6 text-center">MUKUYU MALL</h2>
+            <h2 class="display-6 text-center">CBU</h2>
             <h2 class="display-6 text-center">IN STOCK</h2>
         </div>
         <h6 class="ml-3 m-0 font-weight-bold row">
-            <a class="link l-20" href="outlets.php">
+            <a class="link l-20" href="cbu_outlets.php">
                 <button type="button" class="btn btn-danger pull-left mt-2 mr-2">BACK</button>
             </a>
             <button
@@ -81,34 +80,23 @@ $order_results = $query->get_result();
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
+                        <th>Model</th>
                         <th>Description</th>
                         <th>Outlet Name</th>
                         <th>Order Date</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php while ($row = $stock_results->fetch_assoc()): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($row['Stock_Name']); ?></td>
-                        <td><?php echo htmlspecialchars($row['Price']); ?></td>
-                        <td><?php echo htmlspecialchars($row['Quantity']); ?></td>
-                        <td><?php echo htmlspecialchars($row['Description']); ?></td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <?php endwhile; ?>
-
                     <?php while ($row = $order_results->fetch_assoc()): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($row['product_name']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Stock_Name']); ?></td>
                         <td><?php echo htmlspecialchars($row['price']); ?></td>
                         <td><?php echo htmlspecialchars($row['quantity']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Model']); ?></td>
                         <td><?php echo htmlspecialchars($row['description']); ?></td>
                         <td><?php echo htmlspecialchars($row['outlet_name']); ?></td>
                         <td><?php echo htmlspecialchars($row['created_at']); ?></td>
                     </tr>
                     <?php endwhile; ?>
-                </tbody>
             </table>
         </div>
     </div>
@@ -124,5 +112,5 @@ $order_results = $query->get_result();
 </body>
 </html>
 <?php
-include('sorters.php');
+include('../sorters.php');
 ?>
