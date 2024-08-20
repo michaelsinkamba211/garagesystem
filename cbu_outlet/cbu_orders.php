@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('../AdminPanel/sorters.php');
 
 
 $query = $db->prepare("SELECT * FROM stafforders WHERE status = 'accepted' AND Outlet_Name = 'cbu'");
@@ -112,5 +113,5 @@ $order_results = $query->get_result();
 </body>
 </html>
 <?php
-include('../sorters.php');
+
 ?>

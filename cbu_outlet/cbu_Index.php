@@ -1,7 +1,8 @@
 <?php
 include('../includes/header.php'); 
-include('../Staff_navbar.php'); 
+// include('../Staff_navbar.php'); 
 include('../includes/scripts.php');
+include('../AdminPanel/sorters.php');
 ?>
 
 <ul
@@ -65,5 +66,5 @@ include('../includes/scripts.php');
         </div>
     </div>
     <?php 
-    include('../sorters.php');
+   
       ?>

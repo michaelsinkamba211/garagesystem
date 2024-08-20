@@ -3,6 +3,7 @@ session_start();
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('../AdminPanel/sorters.php');
 
 $query = "SELECT * FROM customer WHERE Outlet_Name = 'cbu'";
 $result = mysqli_query($db, $query);
@@ -114,6 +115,6 @@ $result = mysqli_query($db, $query);
         });
     </script>
     <?php
-include('../sorters.php');
+
 session_destroy();
 ?>

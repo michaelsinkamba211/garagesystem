@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('../AdminPanel/sorters.php');
 
 $query = $db->prepare("SELECT * FROM payment");
 $query->execute();
@@ -158,5 +159,5 @@ while ($row = mysqli_fetch_assoc($results)) {
     });
 </script>
 <?php
-include('../sorters.php');
+
 ?>
