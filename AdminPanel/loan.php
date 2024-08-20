@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('sorters.php');
 
 
 $query = "SELECT 
@@ -169,5 +170,4 @@ $output = mysqli_query($db, $query);
         });
     </script>
     <?php
-include('sorters.php');
 ?>

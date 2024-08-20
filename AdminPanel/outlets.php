@@ -2,6 +2,7 @@
 include('../includes/scripts.php');
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
+include('sorters.php');
 
 
 $query = "SELECT * FROM outlet";
@@ -129,6 +130,3 @@ $result = mysqli_query($db, $query);
         );
     });
 </script>
-<?php
-include('sorters.php');
-?>

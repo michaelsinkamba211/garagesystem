@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('sorters.php');
 
 $query = "SELECT * FROM part_payment ";
 $result = mysqli_query($db, $query);
@@ -156,6 +157,3 @@ $(document).ready(function () {
     );
 });
 </script>
-<?php
-include('../includes/sorters.php')
-?>

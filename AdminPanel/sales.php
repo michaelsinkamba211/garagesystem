@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('sorters.php');
 
 $query = $db->prepare("SELECT * FROM payment");
 $query->execute();
@@ -81,10 +82,8 @@ while ($row = mysqli_fetch_assoc($results)) {
                         <label class="text-dark text-weight-bold">Date</label>
                         <input type="date" name="date" class="form-control">
                     </div> -->
-                    <div class="form-group">
-                        <label class="text-dark text-weight-bold">Outlet Name</label>
-                        <input type="text" name="outlet" class="form-control" placeholder="Outlet">
-                    </div>
+                    
+                    <input type="hidden" name="outlet" class="Iringa">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -167,6 +166,3 @@ while ($row = mysqli_fetch_assoc($results)) {
         );
     });
 </script>
-<?php
-include('sorters.php');
-?>

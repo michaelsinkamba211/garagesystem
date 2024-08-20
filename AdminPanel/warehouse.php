@@ -2,6 +2,7 @@
 include('../includes/scripts.php');
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
+include('sorters.php');
 
 
 $query = "SELECT * FROM Warehouse";
@@ -131,6 +132,3 @@ $(document).ready(function () {
     );
 });
 </script>
-<?php
-include('../includes/sorters.php')
-?>

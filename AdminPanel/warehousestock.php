@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('sorters.php');
 
 $query = $db->prepare("SELECT * FROM stock");
 $query->execute();

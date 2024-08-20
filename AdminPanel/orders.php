@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('sorters.php');
 
 $query = $db->prepare("SELECT * FROM orders");
 $query->execute();
@@ -127,5 +128,4 @@ $order_results = $query->get_result();
 </body>
 </html>
 <?php
-include('sorters.php');
 ?>

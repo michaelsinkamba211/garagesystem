@@ -2,6 +2,7 @@
 session_start();
 include('../includes/header.php');
 include('../Staff_navbar.php'); 
+include('sorters.php');
 ?>
 
 <ul
@@ -179,6 +180,5 @@ include('../Staff_navbar.php');
 
     <!-- Content Row -->
     <?php
-include('sorters.php');
 session_destroy();
 ?>

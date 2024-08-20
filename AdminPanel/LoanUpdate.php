@@ -2,6 +2,7 @@
 include('../includes/header.php'); 
 include('../Staff_navbar.php');
 include('../includes/scripts.php');
+include('sorters.php');
 
 $id =$_GET['id'];
 $query = "SELECT * FROM loans WHERE loan_id = '$id'";
