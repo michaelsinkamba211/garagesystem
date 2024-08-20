@@ -1,26 +1,36 @@
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
 
-<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="../vendor/chart.js/Chart.min.js"></script>
 
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    swal({
-        title: 'Good job',
-        text: 'deleted successfully',
-        icon: 'Success',
-        button: 'awcon swiss!'
-    })
-</script>
+
+<?php
+if (isset($_SESSION['status']) && $_SESSION['status'] !='') 
+                    {
+                        ?> 
+                            <script>
+                                swal({
+                                    title: <?php  echo $_SESSION['status']; ?>,
+                                    // text: 'deleted successfully',
+                                    icon: <?php  echo $_SESSION['status_code']; ?>,
+                                    button: 'close'
+                                })
+                            </script>
+                            <?php
+                        unset($_SESSION['status']);
+                    }
+                ?>
 
 
 <?php
@@ -521,7 +531,7 @@
     
         if($row = mysqli_fetch_assoc($query_run)) {
             if ($row['Position'] === 'Admin') {
-                header('Location: index.php');
+                header('Location: ../AdminPanel/index.php');
                 $_SESSION['Welcome'] = "Welcome Back";
             } elseif
              ($row['Outlet_Name'] === 'iringa') {
@@ -529,7 +539,7 @@
                 $_SESSION['Welcome'] = "Welcome Back";
             } elseif
              ($row['Outlet_Name'] === 'cbu') {
-                header('Location: cbu_outlet/cbu_index.php');
+                header('Location: ../cbu_outlet/cbu_index.php');
                 $_SESSION['Welcome'] = "Welcome Back";
             } elseif
             ($row['Outlet_Name'] === 'mu') {

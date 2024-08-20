@@ -1,7 +1,7 @@
 <?php
-include('includes/header.php'); 
-include('Staff_navbar.php');
-include('includes/scripts.php');
+include('../includes/header.php'); 
+include('../Staff_navbar.php');
+include('../includes/scripts.php');
 
 $query = "SELECT * FROM stock";
 $results = mysqli_query($db, $query);
@@ -13,7 +13,7 @@ $results = mysqli_query($db, $query);
         <div class="card-header py-4">
             <h2 class="display-6 text-center">NATIONAL STOCK REPORT</h2>
             <h6 class="ml-2 font-weight-bold row">
-                <a class="link" href="index.php">
+                <a class="link" href="../Admin Panel/index.php">
                     <button type="button" class="btn btn-danger mt-2 ml-3">BACK</button>
                 </a>
             </h6>

@@ -1,7 +1,7 @@
 <?php
-include('includes/header.php'); 
-include('Staff_navbar.php');
-include('includes/scripts.php');
+include('../includes/header.php'); 
+include('../Staff_navbar.php');
+include('../includes/scripts.php');
 
 $query = "SELECT * FROM payment";
 $results = mysqli_query($db, $query);
@@ -19,7 +19,7 @@ $results = mysqli_query($db, $query);
                 </a>
             </ul>
             <h6 class="ml-2 font-weight-bold row">
-                <a class="link" href="index.php">
+                <a class="link" href="../Admin Panel/index.php">
                     <button type="button" class="btn btn-danger mt-2 ml-3">BACK</button>
                 </a>
             </h6>
@@ -94,5 +94,5 @@ $('#nationalsalesTable').DataTable(
 });
 </script>
 <?php
-include('sorters.php');
+include('../AdminPanel/sorters.php');
 ?>
