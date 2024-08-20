@@ -19,40 +19,79 @@ function checkBoxesBoxes() {
   });
 }
 
-// jQuery to observe the closing and opening of the menu
-
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    $("header").css("display", "flex");
-    // $("header").css("opacity", "1");
-    $("header").css("flex-direction", "column");
-  } else {
-
-    $("header").css("display", "none");
-    // $("header").css("opacity", "0");
-  }
-  prevScrollpos = currentScrollPos;
-};
-
 
 // col-12 smooth apearing
 
-document.addEventListener('DOMContentLoaded', function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1 
-  });
 
-  document.querySelectorAll('.col-12').forEach(element => {
-    observer.observe(element);
+
+
+
+// spinner
+
+// JavaScript to hide the spinner
+document.addEventListener("DOMContentLoaded", function() {
+  // Ensure the spinner is hidden after everything is loaded
+  window.addEventListener("load", function() {
+    document.getElementById("spinner").style.display = "none";
   });
 });
 
+
+
+
+
+// for auto hiding
+let lastScrollTop = 0;
+let scrolledPastPoint = false;
+const scrollThreshold = 60; // Adjust this value to determine when the header behavior starts
+
+window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll down
+        if (scrolledPastPoint) {
+            document.querySelector('.header').style.transform = 'translateY(-100%)';
+        }
+    } else {
+        // Scroll up
+        if (scrolledPastPoint) {
+            document.querySelector('.header').style.transform = 'translateY(0)';
+        }
+    }
+
+    if (currentScroll > scrollThreshold) {
+        scrolledPastPoint = true;
+    } else {
+        scrolledPastPoint = false;
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}, false);
+
+
+
+// smooth apearing of the products_holder
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Function to observe elements and add 'visible' class
+  function observeElements(selector) {
+      const elements = document.querySelectorAll(selector);
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+              }
+          });
+      }, { threshold: 0.2 });
+
+      elements.forEach(element => {
+          observer.observe(element);
+      });
+  }
+
+  // Observing different types of elements
+  observeElements('.product_holder');
+});

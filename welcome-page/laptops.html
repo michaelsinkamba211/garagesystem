@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmtedy.Store</title>
+    <title>Harmtedy Investments| Laptops</title>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -29,91 +29,117 @@
     <!-- styles start-->
     <link rel="stylesheet" href="./welcome-css/animation.css">
     <link rel="stylesheet" href="./welcome-css/welcomepage.css">
+    <link rel="stylesheet" href="./newheader.css">
+
     <!-- styles end -->
     <!-- jQuery -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
+
+    <div id="spinner" class="spinner">
+        <div class="spinner-content">
+            <!-- You can use a CSS spinner or an image -->
+            <div class="spinner-icon"></div>
+        </div>
+    </div>
+
     <!-- header -->
 
-    <header>
-        <div class="first_header">
-            <div class="essential_container">
-                <div class="logo">
-                    <h1 class="store_logo">
-                        <a href="./index.html">Harmtedy.<span id="special">Store</span></a>
-                    </h1>
-                </div>
-
-                <div class="contacts">
-                    <div class="location">
-                        <span class=" icon"> 
-                            <i class="fa-solid fa-map"></i> 
-                        <a href="#">Lusaka IRinga Mall shop
-                            No.20</a></span>
-
-                    </div>
-
-                    <div class="location">
-                        <span class=" icon"> 
-                            <i class="fa-solid fa-truck"></i>                        <a href="#">We Deliver ContryWide</a></span>
-
-                    </div>
-
-                    <div class="email">
-                        <span class=" icon">
-                            <span class="fa-solid fa-paper-plane "></span>
-                            <a target="_blank"
-                                href="https://mail.google.com/mail/?view=cm&fs=1&to=michaelsinkamba211@email.com">
-                                harmtedystore@gmail.com</a>
-                        </span>
-                    </div>
-
-                    <div class="phone">
-                        <span class=" icon">
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+260974286888" target="_blank">+2609 742868 88</a>
-                        </span>
+    <div class="container-fluid p-0 header">
+        <!-- Full-width background section -->
+        <div class="full-width-bg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="row align-items-start content_holder">
+                    <div class="col-12">
+                        <!-- contacts -->
+                        <div class="container-fluid">
+                            <div class="row top_header_container">
+                                <div class="col-12 col-md-4 col-lg-4 col-xl-3 p-0 logo_holder">
+                                    <div class="logo">
+                                        <a href="./index.html">
+                                            Harmtedy <span id="special" class="d-md-noe"> Investments </span>
+                                            <span class="fiishing_logo d-none">Limited Company</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 col-lg-8 col-xl-9 contact_holder">
+                                    <div class="contacts d-flex">
+                                        <div class="location">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-map"></i>
+                                                <a href="#">Iringa Mall shop No.20</a>
+                                            </span>
+                                        </div>
+                                        <div class="deliveries">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-truck"></i>
+                                                <a href="#">CountryWide Deliveries</a>
+                                            </span>
+                                        </div>
+                                        <div class="email">
+                                            <span class="icon">
+                                                <span class="fa-solid fa-paper-plane"></span>
+                                                <a target="_blank"
+                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=harmtedy@email.com">
+                                                    harmtedy@gmail.com
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <div class="phone">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-phone"></i>
+                                                <a href="tel:+260975347176" target="_blank">+2609 75347176</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contacts end -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="second_header">
-            <div class="nav_container">
-
-
-                <nav>
-
-                    <input type="checkbox" name="" id="menu">
-                    <button class="menu">
-                        <label class="menu2" for="menu">
-                            <!-- <i class="fa-solid fa-bars fa-2xl"></i> -->
-                            <i class="fa-solid fa-bars"></i>
-                            <span>MENU</span>
-                        </label>
-
-                        <div class="appointment">
-                            <a href="#contacts" class="make_apo"> <span>Make An</span> Locate Store</a>
-                        </div>
+        <!-- Navbar Section -->
+        <div class="col-12 p-0 navbar_holder">
+            <nav class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <!-- Navbar Toggler Button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="phone_hide">
-                        <ul>
-                            <li><a href="./index.html" id="first">home</a></li>
-                            <li><a href="./headsets.html">Airpods</a></li>
-                            <li><a href="./laptops.html" class="activelink">laptops</a></li>
-                            <li><a class="locate_store" href="./contact.html">Locate Store</a></li>
-                        </ul>
+                    <!-- Form Outside the Collapsible Navbar -->
+                    <div class="d-flex d-md-none order-lg-1 ms-auto" role="search">
+                        <a class="locate_store" href="./contact.html">Locate Store</a>
                     </div>
 
-
-
-                </nav>
-            </div>
+                    <!-- Collapsible Navbar Content -->
+                    <div class="collapse navbar-collapse order-lg-0" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-left mx-md-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link activelink" aria-current="page" href="./laptops.html">Laptops</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./headsets.html">Airpods</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./contact.html">Locate Store</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </header>
+    </div>
     <!-- body starts -->
     <section class="gadgets_div">
         <div class="container-lg text-center">
@@ -219,8 +245,8 @@
                     <div class="card mb-2 product_holder">
                         <div class="row g-0 products_contents" id="product_row_1">
                             <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
-                                <img src="./productsimages/laptops/hpg5.jpeg" alt=""
-                                    class="img-fluid product_image_src" id="product_image_src_1">
+                                <img src="./productsimages/laptops/hpg5.jpeg" alt="" class="img-fluid product_image_src"
+                                    id="product_image_src_1">
                             </div>
 
                             <div class="col-md-12 product_desc p-0 ">
@@ -266,8 +292,8 @@
                     <div class="card mb-2 product_holder">
                         <div class="row g-0 products_contents" id="product_row_1">
                             <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
-                                <img src="./productsimages/laptops/hpg3.jpeg" alt=""
-                                    class="img-fluid product_image_src" id="product_image_src_1">
+                                <img src="./productsimages/laptops/hpg3.jpeg" alt="" class="img-fluid product_image_src"
+                                    id="product_image_src_1">
                             </div>
 
                             <div class="col-md-12 product_desc p-0 ">
@@ -295,7 +321,8 @@
                                                 <i class="fa-solid fa-eye"></i>
                                             </button>
 
-                                            <button type="button" class="btn buy_directly" id="buy_directly"><i class="fa-solid fa-cart-shopping"></i>
+                                            <button type="button" class="btn buy_directly" id="buy_directly"><i
+                                                    class="fa-solid fa-cart-shopping"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -331,7 +358,8 @@
                                             <p><strong>Display:</strong> 12.5" HD</p>
                                             <p><strong>Graphics:</strong> Integrated Intel HD Graphics</p>
                                             <p><strong>Operating System:</strong> Windows 11 Pro</p>
-                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>                                        </div>
+                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>
+                                        </div>
 
                                         <div class="btns_for_buying">
                                             <button class="btn btn-primary mt-2 w-100 view_more_button"
@@ -378,7 +406,8 @@
                                             <p><strong>Display:</strong> 13" HD</p>
                                             <p><strong>Graphics:</strong> Integrated Intel HD Graphics</p>
                                             <p><strong>Operating System:</strong> Windows 10 Pro</p>
-                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>                                        </div>
+                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>
+                                        </div>
 
                                         <div class="btns_for_buying">
                                             <button class="btn btn-primary mt-2 w-100 view_more_button"
@@ -425,7 +454,8 @@
                                             <p><strong>Display:</strong> 14" HD</p>
                                             <p><strong>Graphics:</strong> Integrated Intel HD Graphics</p>
                                             <p><strong>Operating System:</strong> Windows 10 Pro</p>
-                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>                                        </div>
+                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>
+                                        </div>
 
                                         <div class="btns_for_buying">
                                             <button class="btn btn-primary mt-2 w-100 view_more_button"
@@ -472,7 +502,8 @@
                                             <p><strong>Display:</strong> 14" HD</p>
                                             <p><strong>Graphics:</strong> Integrated Intel HD Graphics</p>
                                             <p><strong>Operating System:</strong> Windows 10 Pro</p>
-                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>                                        </div>
+                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>
+                                        </div>
 
                                         <div class="btns_for_buying">
                                             <button class="btn btn-primary mt-2 w-100 view_more_button"
@@ -518,7 +549,8 @@
                                             <p><strong>Display:</strong> 14" HD</p>
                                             <p><strong>Graphics:</strong> Integrated Intel HD Graphics</p>
                                             <p><strong>Operating System:</strong> Windows 10 Pro</p>
-                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>                                        </div>
+                                            <p><strong>Others:</strong> Comes with Activated Office 365</p>
+                                        </div>
 
                                         <div class="btns_for_buying">
                                             <button class="btn btn-primary mt-2 w-100 view_more_button"
@@ -633,15 +665,240 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!-- chat laptops -->
+
+                <!-- Product 2 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_2">
+                            <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
+                                <img src="./productsimages/laptops/dellinpirios.jpeg" alt=""
+                                    class="img-fluid product_image_src" id="product_image_src_2">
+                            </div>
+                            <div class="col-md-12 product_desc p-0 ">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">Dell Inspiron 15 3000</h5>
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Processor:</strong> Intel Corei7 10th gen</p>
+                                        <p><strong>RAM:</strong> 16GB DDR4</p>
+                                        <p><strong>Storage:</strong> 512GB SSD</p>
+                                        <p><strong>Battery Life:</strong> Up to 8 hours</p>
+                                        <p><strong>Price:</strong> Order Now</p>
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Display:</strong> 15.6" FHD</p>
+                                            <p><strong>Graphics:</strong> NVIDIA GeForce MX230</p>
+                                            <p><strong>Operating System:</strong> Windows 10 Home</p>
+                                        </div>
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button type="button" class="btn buy_directly" id="buy_directly"><i
+                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_3">
+                            <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
+                                <img src="./productsimages/laptops/hppabilion.jpeg" alt=""
+                                    class="img-fluid product_image_src" id="product_image_src_3">
+                            </div>
+                            <div class="col-md-12 product_desc p-0 ">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">HP Pavilion x360</h5>
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Processor:</strong> Intel Corei5 11th gen</p>
+                                        <p><strong>RAM:</strong> 8GB DDR4</p>
+                                        <p><strong>Storage:</strong> 512GB SSD</p>
+                                        <p><strong>Battery Life:</strong> Up to 9 hours</p>
+                                        <p><strong>Price:</strong> Order Now</p>
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Display:</strong> 14" FHD Touch</p>
+                                            <p><strong>Graphics:</strong> Integrated Intel Iris Xe Graphics</p>
+                                            <p><strong>Operating System:</strong> Windows 10 Home</p>
+                                        </div>
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button type="button" class="btn buy_directly" id="buy_directly"><i
+                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_4">
+                            <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
+                                <img src="./productsimages/laptops/acer-aspire.jpeg" alt=""
+                                    class="img-fluid product_image_src" id="product_image_src_4">
+                            </div>
+                            <div class="col-md-12 product_desc p-0 ">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">Acer Aspire 5</h5>
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Processor:</strong> AMD Ryzen 5 4500U</p>
+                                        <p><strong>RAM:</strong> 8GB DDR4</p>
+                                        <p><strong>Storage:</strong> 256GB SSD</p>
+                                        <p><strong>Battery Life:</strong> Up to 10 hours</p>
+                                        <p><strong>Price:</strong> Order Now</p>
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Display:</strong> 15.6" FHD</p>
+                                            <p><strong>Graphics:</strong> AMD Radeon Vega 8</p>
+                                            <p><strong>Operating System:</strong> Windows 10 Home</p>
+                                        </div>
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button type="button" class="btn buy_directly" id="buy_directly"><i
+                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_5">
+                            <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
+                                <img src="./productsimages/laptops/macbookair.jpeg" alt=""
+                                    class="img-fluid product_image_src" id="product_image_src_5">
+                            </div>
+                            <div class="col-md-12 product_desc p-0 ">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">Apple MacBook Air M1</h5>
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Processor:</strong> Apple M1 chip</p>
+                                        <p><strong>RAM:</strong> 8GB Unified Memory</p>
+                                        <p><strong>Storage:</strong> 256GB SSD</p>
+                                        <p><strong>Battery Life:</strong> Up to 15 hours</p>
+                                        <p><strong>Price:</strong> Order Now</p>
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Display:</strong> 13.3" Retina</p>
+                                            <p><strong>Graphics:</strong> Integrated 7-core GPU</p>
+                                            <p><strong>Operating System:</strong> macOS</p>
+                                        </div>
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button type="button" class="btn buy_directly" id="buy_directly"><i
+                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_6">
+                            <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
+                                <img src="./productsimages/laptops/lenovo-ideapad.jpeg" alt=""
+                                    class="img-fluid product_image_src" id="product_image_src_6">
+                            </div>
+                            <div class="col-md-12 product_desc p-0 ">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">Lenovo IdeaPad 3</h5>
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Processor:</strong> Intel Corei3 10th gen</p>
+                                        <p><strong>RAM:</strong> 4GB DDR4</p>
+                                        <p><strong>Storage:</strong> 256GB SSD</p>
+                                        <p><strong>Battery Life:</strong> Up to 6 hours</p>
+                                        <p><strong>Price:</strong> Order Now</p>
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Display:</strong> 15.6" HD</p>
+                                            <p><strong>Graphics:</strong> Integrated Intel UHD Graphics</p>
+                                            <p><strong>Operating System:</strong> Windows 10 Home</p>
+                                        </div>
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button type="button" class="btn buy_directly" id="buy_directly"><i
+                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-12 col-md-4 col-lg-3 col-sm-6">
+                    <div class="card mb-2 product_holder">
+                        <div class="row g-0 products_contents" id="product_row_7">
+                            <div class="col-md-12 prod_image p-0 m-0 " id="product_image">
+                                <img src="./productsimages/laptops/AVivoBook 15 .jpeg" alt=""
+                                    class="img-fluid product_image_src" id="product_image_src_7">
+                            </div>
+                            <div class="col-md-12 product_desc p-0 ">
+                                <div class="card-body product_details">
+                                    <h5 class="card-title product_model mb-3 mt-0 p-0">Asus VivoBook 15</h5>
+                                    <div class="card-text product_properties p-0">
+                                        <p><strong>Processor:</strong> Intel Corei5 10th gen</p>
+                                        <p><strong>RAM:</strong> 8GB DDR4</p>
+                                        <p><strong>Storage:</strong> 512GB SSD</p>
+                                        <p><strong>Battery Life:</strong> Up to 7 hours</p>
+                                        <p><strong>Price:</strong> Order Now</p>
+                                        <div class="hidden_features d-none">
+                                            <p><strong>Display:</strong> 15.6" FHD</p>
+                                            <p><strong>Graphics:</strong> Integrated Intel UHD Graphics</p>
+                                            <p><strong>Operating System:</strong> Windows 10 Home</p>
+                                        </div>
+                                        <div class="btns_for_buying">
+                                            <button class="btn btn-primary mt-2 w-100 view_more_button"
+                                                data-bs-toggle="modal" data-bs-target="#productModal">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button type="button" class="btn buy_directly" id="buy_directly"><i
+                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
         </div>
     </section>
 
-
     <!-- Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -668,8 +925,6 @@
         </div>
     </div>
 
-    <!-- lorem ipsum text -->
-
     <!-- boostrap cdn with poppper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -680,7 +935,7 @@
 
     <!-- mansory -->
 
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
 
 
 

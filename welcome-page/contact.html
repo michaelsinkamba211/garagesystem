@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmtedy.Store</title>
+    <title>Harmtedy Investments| Contact</title>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -27,9 +27,11 @@
 
 
     <!-- styles start-->
-    <!-- <link rel="stylesheet" href="./welcome-css/animation.css"> -->
+    <link rel="stylesheet" href="./welcome-css/animation.css">
     <link rel="stylesheet" href="./welcome-css/welcomepage.css">
     <link rel="stylesheet" href="./welcome-css/contact.css">
+    <link rel="stylesheet" href="./newheader.css">
+
     <!-- styles end -->
     <!-- jQuery -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -37,85 +39,106 @@
 
 
 <body>
+
+    <div id="spinner" class="spinner">
+        <div class="spinner-content">
+          <!-- You can use a CSS spinner or an image -->
+          <div class="spinner-icon"></div>
+        </div>
+      </div>
     <!-- header -->
 
-    <header>
-        <div class="first_header">
-            <div class="essential_container">
-                <div class="logo">
-                    <h1 class="store_logo">
-                        <a href="./index.html">Harmtedy.<span id="special">Store</span></a>
-                    </h1>
-                </div>
-
-                <div class="contacts">
-                    <div class="location">
-                        <span class=" icon"> 
-                            <i class="fa-solid fa-map"></i> 
-                        <a href="#">Lusaka IRinga Mall shop
-                            No.20</a></span>
-
-                    </div>
-
-                    <div class="location">
-                        <span class=" icon"> 
-                            <i class="fa-solid fa-truck"></i>                        <a href="#">We Deliver ContryWide</a></span>
-
-                    </div>
-
-                    <div class="email">
-                        <span class=" icon">
-                            <span class="fa-solid fa-paper-plane "></span>
-                            <a target="_blank"
-                                href="https://mail.google.com/mail/?view=cm&fs=1&to=michaelsinkamba211@email.com">
-                                harmtedystore@gmail.com</a>
-                        </span>
-                    </div>
-
-                    <div class="phone">
-                        <span class=" icon">
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+260974286888" target="_blank">+2609 742868 88</a>
-                        </span>
+    <div class="container-fluid p-0 header">
+        <!-- Full-width background section -->
+        <div class="full-width-bg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="row align-items-start content_holder">
+                    <div class="col-12">
+                        <!-- contacts -->
+                        <div class="container-fluid">
+                            <div class="row top_header_container">
+                                <div class="col-12 col-md-4 col-lg-4 col-xl-3 p-0 logo_holder">
+                                    <div class="logo">
+                                        <a href="./index.html">
+                                            Harmtedy <span id="special" class="d-md-noe"> Investments </span>
+                                            <span class="fiishing_logo d-none">Limited Company</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 col-lg-8 col-xl-9 contact_holder">
+                                    <div class="contacts d-flex">
+                                        <div class="location">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-map"></i>
+                                                <a href="#">Iringa Mall shop No.20</a>
+                                            </span>
+                                        </div>
+                                        <div class="deliveries">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-truck"></i>
+                                                <a href="#">CountryWide Deliveries</a>
+                                            </span>
+                                        </div>
+                                        <div class="email">
+                                            <span class="icon">
+                                                <span class="fa-solid fa-paper-plane"></span>
+                                                <a target="_blank"
+                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=harmtedy@email.com">
+                                                    harmtedy@gmail.com
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <div class="phone">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-phone"></i>
+                                                <a href="tel:+260975347176" target="_blank">+2609 75347176</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contacts end -->
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="second_header">
-            <div class="nav_container">
-
-
-                <nav>
-
-                    <input type="checkbox" name="" id="menu">
-                    <button class="menu">
-                        <label class="menu2" for="menu">
-                            <!-- <i class="fa-solid fa-bars fa-2xl"></i> -->
-                            <i class="fa-solid fa-bars"></i>
-                            <span>MENU</span>
-                        </label>
-
-                        <div class="appointment">
-                            <a href="#contacts" class="make_apo"> <span>Make An</span> Locate Store</a>
-                        </div>
+    
+        <!-- Navbar Section -->
+        <div class="col-12 p-0 navbar_holder">
+            <nav class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <!-- Navbar Toggler Button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-
-                    <div class="phone_hide">
-                        <ul>
-                            <li><a href="./index.html" id="first" >home</a></li>
-                            <li><a href="./headsets.html">Airpods</a></li>
-                            <li><a href="./laptops.html">laptops</a></li>
-                            <li><a class="locate_store activelink" href="./contact.html">Locate Store</a></li>
+    
+                    <!-- Form Outside the Collapsible Navbar -->
+                    <div class="d-flex d-md-none order-lg-1 ms-auto" role="search">
+                        <a class="locate_store" href="./contact.html">Locate Store</a>
+                    </div>
+    
+                    <!-- Collapsible Navbar Content -->
+                    <div class="collapse navbar-collapse order-lg-0" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-left mx-md-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="./laptops.html">Laptops</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./headsets.html">Airpods</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link activelink" aria-current="page" href="./contact.html">Locate Store</a>
+                            </li>
                         </ul>
                     </div>
-
-
-
-                </nav>
-            </div>
+                </div>
+            </nav>
         </div>
-    </header>
+    </div>
     <!-- body starts -->
 
 
@@ -124,22 +147,22 @@
 
 
 
- 
-    <section class="contact_us contact box" id="contact">
+
+    <section class="contact_us contact" id="contact">
 
         <p class="text-center">
             Feel free to send us a message about our products.
         </p>
 
         <div class="contact_wrapper">
-            <div class="number brah">
+            <div class="number">
                 <div>
                     <p class="name">
                         <!-- icon -->
                         <i class="fa-solid fa-location-dot"></i> Address
                     </p>
 
-                    <p class="value">Lusaka Zambia</p>
+                    <p class="value">Lusaka Iringa Mall Shop No.20</p>
                 </div>
 
                 <div>
@@ -147,17 +170,16 @@
                         <!-- icon -->
                         <i class="fa-solid fa-phone"></i> Contact Number
                     </p>
-                    <p class="value">+26 0974286888</p>
+                    <p class="value">+260 975 3471 76</p>
                 </div>
 
                 <div>
                     <p class="name">
                         <!-- icon -->
-
                         <i class="fa-regular fa-envelope"></i> Email Address
                     </p>
 
-                    <p class="value">harmtedystore@gmail.com</p>
+                    <p class="value">harmtedy@gmail.com</p>
                 </div>
 
                 <div>
@@ -166,13 +188,13 @@
                         <i class="fa-solid fa-globe"></i> Website
                     </p>
 
-                    <p class="value">www.harmtedy.com</p>
+                    <p class="value">harmtedyshop</p>
                 </div>
             </div>
 
 
 
-            <div class="messages brah">
+            <div class="messages">
                 <form id="contact-form" onsubmit="return validateForm()">
                     <input type="text" id="user_name" name="name" class="name" placeholder="Your Name" required> <input
                         type="email" id="user_email" name="email" class="email" placeholder="Your Email" required>
@@ -184,7 +206,7 @@
                 
             </div>
 
-            <div class="google_map ani_service ">
+            <div class="google_map ">
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.472302898429!2d28.27835396012696!3d-15.42409730563446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f35cbce919c1%3A0x257570e25f16a7bc!2sIringa%20Shopping%20mall!5e0!3m2!1sen!2szm!4v1724017848052!5m2!1sen!2szm"
                     width="100%" height="350" style="border: 0;" allowfullscreen="" loading="lazy"
@@ -193,8 +215,6 @@
 
         </div>
     </section>
-
-
 
 
 

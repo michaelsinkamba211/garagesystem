@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmtedy.Store</title>
+    <title>Harmtedy Investments| Headsets</title>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -29,6 +29,7 @@
     <!-- styles start-->
     <link rel="stylesheet" href="./welcome-css/animation.css">
     <link rel="stylesheet" href="./welcome-css/welcomepage.css">
+    <link rel="stylesheet" href="./newheader.css">
     <!-- styles end -->
     <!-- jQuery -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -43,85 +44,107 @@
 </style>
 
 <body>
+
+    <div id="spinner" class="spinner">
+        <div class="spinner-content">
+          <!-- You can use a CSS spinner or an image -->
+          <div class="spinner-icon"></div>
+        </div>
+      </div>
     <!-- header -->
-
-    <header>
-        <div class="first_header">
-            <div class="essential_container">
-                <div class="logo">
-                    <h1 class="store_logo">
-                        <a href="./index.html">Harmtedy.<span id="special">Store</span></a>
-                    </h1>
-                </div>
-
-                <div class="contacts">
-                    <div class="location">
-                        <span class=" icon"> 
-                            <i class="fa-solid fa-map"></i> 
-                        <a href="#">Lusaka IRinga Mall shop
-                            No.20</a></span>
-
-                    </div>
-
-                    <div class="location">
-                        <span class=" icon"> 
-                            <i class="fa-solid fa-truck"></i>                        <a href="#">We Deliver ContryWide</a></span>
-
-                    </div>
-
-                    <div class="email">
-                        <span class=" icon">
-                            <span class="fa-solid fa-paper-plane "></span>
-                            <a target="_blank"
-                                href="https://mail.google.com/mail/?view=cm&fs=1&to=michaelsinkamba211@email.com">
-                                harmtedystore@gmail.com</a>
-                        </span>
-                    </div>
-
-                    <div class="phone">
-                        <span class=" icon">
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+260974286888" target="_blank">+2609 742868 88</a>
-                        </span>
+    <div class="container-fluid p-0 header">
+        <!-- Full-width background section -->
+        <div class="full-width-bg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="row align-items-start content_holder">
+                    <div class="col-12">
+                        <!-- contacts -->
+                        <div class="container-fluid">
+                            <div class="row top_header_container">
+                                <div class="col-12 col-md-4 col-lg-4 col-xl-3 p-0 logo_holder">
+                                    <div class="logo">
+                                        <a href="./index.html">
+                                            Harmtedy <span id="special" class="d-md-noe"> Investments </span>
+                                            <span class="fiishing_logo d-none">Limited Company</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 col-lg-8 col-xl-9 contact_holder">
+                                    <div class="contacts d-flex">
+                                        <div class="location">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-map"></i>
+                                                <a href="#">Iringa Mall shop No.20</a>
+                                            </span>
+                                        </div>
+                                        <div class="deliveries">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-truck"></i>
+                                                <a href="#">CountryWide Deliveries</a>
+                                            </span>
+                                        </div>
+                                        <div class="email">
+                                            <span class="icon">
+                                                <span class="fa-solid fa-paper-plane"></span>
+                                                <a target="_blank"
+                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=harmtedy@email.com">
+                                                    harmtedy@gmail.com
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <div class="phone">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-phone"></i>
+                                                <a href="tel:+260975347176" target="_blank">+2609 75347176</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contacts end -->
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="second_header">
-            <div class="nav_container">
-
-
-                <nav>
-
-                    <input type="checkbox" name="" id="menu">
-                    <button class="menu">
-                        <label class="menu2" for="menu">
-                            <!-- <i class="fa-solid fa-bars fa-2xl"></i> -->
-                            <i class="fa-solid fa-bars"></i>
-                            <span>MENU</span>
-                        </label>
-
-                        <div class="appointment">
-                            <a href="#contacts" class="make_apo"> <span>Make An</span> Locate Store</a>
-                        </div>
+    
+        <!-- Navbar Section -->
+        <div class="col-12 p-0 navbar_holder">
+            <nav class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <!-- Navbar Toggler Button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-
-                    <div class="phone_hide">
-                        <ul>
-                            <li><a href="./index.html" id="first">home</a></li>
-                            <li><a href="./headsets.html" class="activelink">Airpods</a></li>
-                            <li><a href="./laptops.html">laptops</a></li>
-                            <li><a class="locate_store" href="./contact.html">Locate Store</a></li>
+    
+                    <!-- Form Outside the Collapsible Navbar -->
+                    <div class="d-flex d-md-none order-lg-1 ms-auto" role="search">
+                        <a class="locate_store" href="./contact.html">Locate Store</a>
+                    </div>
+    
+                    <!-- Collapsible Navbar Content -->
+                    <div class="collapse navbar-collapse order-lg-0" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-left mx-md-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./laptops.html">Laptops</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link activelink" aria-current="page" href="./headsets.html">Airpods</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./contact.html">Locate Store</a>
+                            </li>
                         </ul>
                     </div>
-
-
-
-                </nav>
-            </div>
+                </div>
+            </nav>
         </div>
-    </header>
+    </div>
+
+
     <!-- body starts -->
     <section class="gadgets_div">
         <div class="container-lg text-center">
@@ -372,7 +395,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -409,11 +432,6 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 
-    <!-- mansory -->
-
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-
 
     <!-- jquery -->
 
@@ -424,16 +442,6 @@
     <script src="./welcome-js/script.js"></script>
     <script src="./welcome-js/animation.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elem = document.querySelector('.products_holder');
-            var msnry = new Masonry(elem, {
-                itemSelector: '.col-12',
-                columnWidth: '.col-12',
-                percentPosition: true
-            });
-        });
-    </script>
 
 </body>
 

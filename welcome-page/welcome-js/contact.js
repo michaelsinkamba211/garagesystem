@@ -69,8 +69,6 @@ contactForm.addEventListener("submit", e => {
             setTimeout(() => {
                 submitBtn.innerText = "Send Again";
             }, 2000);
-
-            // ends here
         });
 });
 

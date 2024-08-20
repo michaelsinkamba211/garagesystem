@@ -3,23 +3,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     scroll-padding-top: 2rem;
     list-style: none;
     text-decoration: none;
 }
 
 
-html,
-body {
-    overflow-x: hidden;
-}
-
 :root {
     --primary-text-color: rgba(0, 0, 0, 0.8) !important;
     --p-font: .95rem;
-    --dark-orange: #fe5800;
+    --dark-orange: #d01a93;
 }
+
+
+body {
+    font-family: Prompt, sans-serif !important;
+  }
+  
 
 /* contact section starts jere */
 .contact {
@@ -71,10 +71,9 @@ body {
     border: 1px solid rgba(204, 204, 204, 0.2);
 }
 
-
 .contact_wrapper .number div:hover {
     background: rgba(204, 204, 204, 0.2);
-    border: 1px solid #ff7900;
+    border: 1px solid #d01a93;
     padding: 10px;
     transition: all .5s ease-in;
 }
@@ -187,4 +186,9 @@ textarea {
     font-size: .95rem !important;
     margin-right:.4rem;
     align-self: center;
+}
+
+
+.contact_wrapper p {
+    font-size: 1rem !important;
 }

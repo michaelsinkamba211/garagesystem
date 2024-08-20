@@ -1,110 +1,16 @@
-/* for all sections */
-
-.box {
-  transition: all 0.3s ease-out;
-  transform: translateY(5%);
-  opacity: 0;
-}
-.box:nth-of-type(even) {
-  transform: translateY(5%);
-}
-
-.box.animate {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* for services */
-
-.ani_service {
-  transition: all 0.2s ease-in;
-  transform: translateX(-10%);
-  transform: translateY(10%);
-  opacity: 0;
-}
-.ani_service:nth-of-type(even) {
-  transform: translateX(-10%);
-  transform: translateY(10%);
-}
-
-.ani_service.animate_service {
-  transform: translate(0);
-  opacity: 1;
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-20%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(20%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.brah {
-  transition: all 0.2s ease-in-out;
-  transform: translateX(-10%) translateY(10%);
-  opacity: 0;
-}
-
-.brah:nth-of-type(odd) {
-  animation: slideInFromLeft 1s ease-in-out;
-}
-
-.brah:nth-of-type(even) {
-  animation: slideInFromRight 1s ease-in-out;
-}
-
-.brah.animate_brah {
-  transform: translate(0);
-  opacity: 1;
-}
-
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease-in-out;
-  margin: 0 auto !important;
-}
-
 /* fade in anima */
 
-.col-12 {
+
+.product_holder {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
 }
 
-.col-12.fade-in {
+.product_holder.show {
   opacity: 1;
-  transform: translateY(0);
 }
+
+
 
 .modal-dialog {
   display: flex;
@@ -116,4 +22,71 @@ header {
 .modal-content {
   width: 100%;
   max-width: 500px; /* Adjust the max-width as needed */
+}
+
+
+
+/* home text animation changing */
+
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+
+
+/* sppinner */
+
+
+/* Basic spinner styling */
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-icon {
+  border: 8px solid #f3f3f3; 
+  border-top: 8px solid #d01a93; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+/* modal animation */
+
+
+.product_holder {
+  opacity: 0 !important;
+  transition: opacity 0.5s ease-out;
+}
+
+.product_holder.visible {
+  opacity: 1 !important;
 }
