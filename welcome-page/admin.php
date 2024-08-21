@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('../includes/header.php');
-include('../includes/scripts.php');
-include('../AdminPanel/sorters.php');
+include('includes/header.php');
+include('includes/scripts.php');
+include('./sorters.php');
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,8 +1,8 @@
 <?php
-include('../includes/scripts.php');
-include('../includes/header.php'); 
-include('../Staff_navbar.php');
-include('../AdminPanel/sorters.php');
+include('scripts.php');
+include('header.php'); 
+include('Staff_navbar.php');
+include('sorters.php');
 
 
 $query = "SELECT * FROM outlet WHERE Outlet_Name = 'cbu'";

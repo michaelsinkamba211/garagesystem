@@ -1,7 +1,7 @@
 <?php
-include('../includes/header.php'); 
-include('../Staff_navbar.php');
-include('../includes/scripts.php');
+include('header.php'); 
+include('Staff_navbar.php');
+include('scripts.php');
 include('sorters.php');
 
 $query = $db->prepare("SELECT * FROM payment");
@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 $items = array();
-$query = "SELECT Stock_Name FROM stafforders";
+$query = "SELECT Stock_Name FROM stafforders WHERE outlet_name = 'cbu'";
 $result = mysqli_query($db, $query);
 while ($row = mysqli_fetch_assoc($results)) {
   $items[] = $row;
@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 <div
     class="modal fade"
-    id="add_customer" 
+    id="add_customer"
     tabindex="-1"
     role="dialog"
     aria-labelledby="exampleModalLabel"
@@ -53,7 +53,7 @@ while ($row = mysqli_fetch_assoc($results)) {
                     </div>
                     <div class="form-group">
                         <label class="text-dark text-weight-bold">Product Name</label>
-                        <select class="form-control dropdown" id="customer_id" name="customer">
+                        <select class="form-control dropdown" id="id" name="product">
                             <option value="">Select Item</option>
                             <?php foreach ($items as $item): ?>
                             <option value="<?php echo htmlspecialchars($item['Stock_Name']); ?>">
@@ -78,16 +78,11 @@ while ($row = mysqli_fetch_assoc($results)) {
                         <label class="text-dark text-weight-bold">Model</label>
                         <input type="text" name="model" class="form-control" placeholder="Item's Model">
                     </div>
-                    <!-- <div class="form-group">
-                        <label class="text-dark text-weight-bold">Date</label>
-                        <input type="date" name="date" class="form-control">
-                    </div> -->
-                    
-                    <input type="hidden" name="outlet" class="Iringa">
+                    <input type="hidden" name="outlet" value="CBU">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="savebtn" class="btn btn-primary">Save</button>
+                    <button type="submit" name="cbu_sale_btn" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
@@ -97,9 +92,9 @@ while ($row = mysqli_fetch_assoc($results)) {
 <div class="container-fluid mt-5">
     <div class="card shadow mr-5">
         <div class="card-header py-0">
-            <h2 class="display-6 text-center text-dark font-weight-bold">SALES</h2>
+            <h2 class="display-6 text-center">SALES</h2>
             <h6 class="ml-2 font-weight-bold row">
-                <a class="link" href="index.php">
+                <a class="link" href="cbu_index.php">
                     <button type="button" class="btn btn-danger mt-2 mr-2">BACK</button>
                 </a>
                 <button
@@ -109,11 +104,8 @@ while ($row = mysqli_fetch_assoc($results)) {
                     data-target="#add_customer">
                     Add Sale
                 </button>
-                <a class="link" href="customer.php">
+                <a class="link" href="cbu.customer.php">
                     <button type="button" class="btn btn-primary mt-2">View Customer</button>
-                </a>
-                <a class="link" href="Part_payment.php">
-                    <button type="button" class="btn btn-warning mt-2 ml-2">Part Payment</button>
                 </a>
             </h6>
         </div>
@@ -166,3 +158,6 @@ while ($row = mysqli_fetch_assoc($results)) {
         );
     });
 </script>
+<?php
+
+?>

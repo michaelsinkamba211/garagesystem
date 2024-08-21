@@ -1,8 +1,8 @@
 <?php
-include('../includes/header.php'); 
-include('../Staff_navbar.php');
-include('../includes/scripts.php');
-include('../AdminPanel/sorters.php');
+include('header.php'); 
+include('Staff_navbar.php');
+include('includes/scripts.php');
+include('sorters.php');
 
 
 $query = $db->prepare("SELECT * FROM stafforders WHERE status = 'accepted' AND Outlet_Name = 'cbu'");

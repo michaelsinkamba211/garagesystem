@@ -1,6 +1,6 @@
 <?php
 include('scripts.php');
-include('includes/header.php'); 
+include('header.php'); 
 include('Staff_navbar.php');
 
 

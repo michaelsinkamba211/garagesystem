@@ -1,7 +1,7 @@
 <?php
-include('../includes/scripts.php');
-include('../includes/header.php'); 
-include('../Staff_navbar.php');
+include('header.php');
+include('scripts.php'); 
+include('Staff_navbar.php');
 include('sorters.php');
 
 
@@ -130,3 +130,5 @@ $result = mysqli_query($db, $query);
         );
     });
 </script>
+<?php
+?>

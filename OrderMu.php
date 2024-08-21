@@ -1,7 +1,7 @@
 <?php
-include('includes/header.php'); 
+include('header.php'); 
 include('Staff_navbar.php');
-include('includes/scripts.php');
+include('scripts.php');
 
 $query = $db->prepare("SELECT * FROM orders WHERE Outlet = Kabwe Outlet");
 $query->execute();

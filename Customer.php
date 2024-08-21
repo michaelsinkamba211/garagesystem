@@ -1,7 +1,8 @@
 <?php
-include('../includes/header.php'); 
-include('../Staff_navbar.php');
-include('../includes/scripts.php');
+include('header.php'); 
+include('Staff_navbar.php');
+include('scripts.php');
+include('sorters.php');
 
 $query = "SELECT * FROM customer";
 $result = mysqli_query($db, $query);
@@ -129,5 +130,4 @@ $result = mysqli_query($db, $query);
         });
     </script>
     <?php
-include('sorters.php');
 ?>

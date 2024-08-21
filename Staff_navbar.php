@@ -1,5 +1,5 @@
 <?php
-include('includes/scripts.php'); 
+include('scripts.php'); 
 ?>
 <div id="content">
     <nav class="bg-success mb-2 h-5 static-top">

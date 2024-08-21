@@ -1,9 +1,9 @@
 <?php
 session_start();
-include('../includes/header.php'); 
-include('../Staff_navbar.php');
-include('../includes/scripts.php');
-include('../AdminPanel/sorters.php');
+include('header.php'); 
+include('Staff_navbar.php');
+include('scripts.php');
+include('sorters.php');
 
 $query = "SELECT * FROM customer WHERE Outlet_Name = 'cbu'";
 $result = mysqli_query($db, $query);

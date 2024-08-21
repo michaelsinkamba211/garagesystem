@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('../includes/header.php');
-include('../Staff_navbar.php'); 
+include('header.php');
+include('Staff_navbar.php'); 
 include('sorters.php');
 ?>
 
