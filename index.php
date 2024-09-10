@@ -1,11 +1,12 @@
 <?php
-include('header.php'); 
+include('header.php');
+include('scripts.php');
 include('Staff_navbar.php'); 
 ?>
 
 <ul class="logout d-flex justify-content-start list-unstyled btn btn-primary mr-3">
     <li><a class="nav-link text-white" href="login.php"><span>Logout</span><i
-       class="fal fa-sign-out-alt ms-2"></i></a></li>
+       class="fal fa-sign-out-alt ms-2"></i></a></li>    
 </ul>
 
 <div class="container-fluid">
@@ -15,10 +16,7 @@ include('Staff_navbar.php');
       <i class="text-white"></i>
           <div class="input-group"></div>  
 </a>
-
-
   <div class="row mr-5 mt-5">
-
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-primary shadow h-200 py-4">
         <div class="card-body">
@@ -115,16 +113,16 @@ include('Staff_navbar.php');
       </div>
     </div>
 
-    <!-- <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-primary shadow py-4">
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-primary shadow h-200 py-4">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-7">
               <div class="nav-item">
-              <div class="h5.5 mb-0 mr-3 font-weight-bold text-gray-800">
+              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
               <div class="nav-item">
-                    <a class="nav-link" href="W_staff.php">
-                      <span>WAREHOUSE STAFF</span></a>
+                    <a class="nav-link" href="loan.php">
+                      <span>LOANS</span></a>
                   </div>
                </div>
               </div>
@@ -132,7 +130,7 @@ include('Staff_navbar.php');
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
 
     <div class="col-xl-3 col-md-6 mb-4">
@@ -170,5 +168,5 @@ include('Staff_navbar.php');
   <!-- Content Row -->
   <?php
 include('scripts.php');
-
+include('sorters.php');
 ?>

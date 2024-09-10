@@ -23,7 +23,7 @@ $results = mysqli_query($db, $query);
     
     </div>
   <div class="card-body">
-  <?php 
+  <?php
 
 $query = "SELECT
 (SELECT SUM(Price) FROM payment) AS total_sales,
@@ -53,7 +53,7 @@ $result = mysqli_query($db, $query);
       </table>
 
 
-      <table class="table table-bordered text-center">
+      <table id="nationalsalesTable" class="table table-bordered text-center">
           <tr class="text-dark text-weight-bold">
             <th>Customer</th>
             <th>Product</th>
@@ -79,3 +79,16 @@ $result = mysqli_query($db, $query);
   </div>
 </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#nationalsalesTable').DataTable({
+        "paging": true,
+        "searching": true,
+        "ordering": true,
+        "info": true
+    });
+});
+</script>
+<?php
+include('sorters.php');
+?>

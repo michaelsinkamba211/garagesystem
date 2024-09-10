@@ -1,11 +1,10 @@
 <?php
-include('header.php'); 
+include('includes/header.php'); 
 include('Staff_navbar.php');
 include('scripts.php');
 
 $query = "SELECT * FROM customer";
 $result = mysqli_query($db, $query);
-
 ?>
 
 
@@ -46,12 +45,11 @@ $result = mysqli_query($db, $query);
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
 
-<div class="card shadow mb-4">
-  <div class="card-header py-4"> 
+<div class="card shadow mr-5">
+  <div class="card-header py-0"> 
     <h2 class="display-6 text-center">CUSTOMERS</h2>
-  </div>
     <h6 class="ml-2 m-10 font-weight-bold text-primary row">
     <a class="link" href="sales.php">
             <button type="button" class="btn btn-danger mt-2 mr-2">BACK</button></a>
@@ -59,11 +57,10 @@ $result = mysqli_query($db, $query);
             <button type="button" class="btn btn-secondary mt-2" data-toggle="modal" data-target="#addadminprofile">
               New Customer
             </button>
+            </h6>
 </div>
-    </h6>
-
   <div class="card-body">
-      <table class="table table-bordered text-center text-dark">
+      <table id="customerTable" class="table table-bordered text-center text-dark">
           <tr class="text-dark text-weight-bold">
             <th>Name</th>
             <th>Address</th>
@@ -85,14 +82,12 @@ $result = mysqli_query($db, $query);
                 </form>
             </td>
             <td>
-            
             <form action="scripts.php" method="post">
                     <input type="hidden" name="delete_id" value="<?php echo $row['CustomerID']; ?>">
                     <button  type="submit" name="customer_delete_btn" class="btn btn-danger">Delete</button>
             </form>
             </td>
             </tr>
-
             <?php
             }
             ?>
@@ -100,3 +95,16 @@ $result = mysqli_query($db, $query);
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#customerTable').DataTable({
+        "paging": true,
+        "searching": true,
+        "ordering": true,
+        "info": true
+    });
+});
+</script>
+<?php
+include('sorters.php');
+?>

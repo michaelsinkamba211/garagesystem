@@ -23,8 +23,6 @@
         die("connection error!");
     }
 
-
-
       if(isset($_POST['customer_btn']))
       {
           $Name = $_POST['name'];
@@ -73,6 +71,29 @@
           }
       }
 
+      if(isset($_POST['loan_btn']))
+      {
+          $Name = $_POST['name'];
+          $Loan_Amount = $_POST['loan_amount'];
+          $Loan_Date = $_POST['loan_date'];
+          $Return_Amount = $_POST['return_amount'];
+          $Due_Date = $_POST['due_date'];
+      
+          $query = "INSERT INTO loans (
+          borrower_name,loan_amount,loan_date,return_amount,due_date) VALUES ('$Name', '$Loan_Amount', '$Loan_Date', '$Return_Amount', '$Due_Date') ";
+          $query_run = mysqli_query($db, $query);
+      
+          if($query_run)
+          {
+              $_SESSION['updated'];
+              header('Location: loan.php');
+          } else
+          {
+              $_SESSION['not updated'];
+              header('Location: loan.php');
+          }
+      }
+
       if(isset($_POST['w_staff_btn']))
       {
           $Name = $_POST['name'];
@@ -106,7 +127,7 @@
           $date = $_POST['date'];
           $Outlet_Name = $_POST['outlet'];
           $Quantity = $_POST['quantity'];
-          $id = $_POST['id_btn'];
+          $id = $_POST['no.'];
       
           $query = "INSERT INTO payment (`CustomerName`, `Stock_Name`, `Price`, `Quantity`, `Date_Sold`, `Outlet_Name`) VALUES ('$customer', '$Product_Name', '$amount', '$Quantity', '$date', '$Outlet_Name')";
           $query_run = mysqli_query($db, $query);
@@ -192,7 +213,7 @@
           $query = "INSERT INTO payment (`CustomerName`, `Stock_Name`, `Price`, `Quantity`, `Date_Sold`, `Outlet_Name`) VALUES ('$customer', '$Product_Name', '$amount', '$Quantity', '$date', '$Outlet_Name')";
           $query_run = mysqli_query($db, $query);
 
-          $query = "UPDATE orders w SET w.Quantity = w.Quantity - $Quantity WHERE OrderID_id= '$id' ";
+          $query = "UPDATE orders  SET Quantity = Quantity - $Quantity WHERE OrderID_id= '$id' ";
           $query_run = mysqli_query($db, $query);
       
           if($query_run)

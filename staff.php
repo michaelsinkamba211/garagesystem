@@ -3,7 +3,7 @@ include('includes/header.php');
 include('Staff_navbar.php');
 include('scripts.php');
 
-// Prepare and execute the query securely
+
 $query = "SELECT * FROM Employee WHERE Position = 'Staff'";
 $output = mysqli_query($db, $query);
 ?>
@@ -61,7 +61,7 @@ $output = mysqli_query($db, $query);
     </div>
 
     <div class="card-body">
-      <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+      <table id="staffTable" class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="text-dark font-weight-bold">
             <th>Employee Name</th>
@@ -93,5 +93,17 @@ $output = mysqli_query($db, $query);
     </div>
   </div>
 </div>
-
 </div>
+<script>
+$(document).ready(function() {
+    $('#staffTable').DataTable({
+        "paging": true,
+        "searching": true,
+        "ordering": true,
+        "info": true
+    });
+});
+</script>
+<?php
+include('sorters.php');
+?>

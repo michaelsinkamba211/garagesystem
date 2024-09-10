@@ -7,7 +7,7 @@ include('Staff_navbar.php');
 $query = "SELECT * FROM outlet";
 $result = mysqli_query($db, $query);
 ?>
-
+<body>
 <div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -41,8 +41,9 @@ $result = mysqli_query($db, $query);
 </div>
 
 <div class="container-fluid mt-5">
-<div class="card shadow mb-4 mr-5">
-  <div class="card-header py-4">
+<div class="card shadow mr-5">
+  <div class="card-header py-0">
+  <h2 class="display-6 text-center mt-2">OUTLETS</h2>
     <h6 class="m-0 font-weight-bold text-primary row">
     <a class="link" href="index.php">
             <button type="button" class="btn btn-danger pull-left">BACK</button></a>
@@ -54,7 +55,7 @@ $result = mysqli_query($db, $query);
 
   <div class="card-body">
 
-      <table class="table table-bordered text-center text-dark" id="dataTable" width="100%" cellspacing="0">
+      <table id="outletsTable" class="table table-bordered text-center text-dark" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="text-weight-bold text-dark">
             <th>Outlet Name </th>
@@ -102,6 +103,16 @@ $result = mysqli_query($db, $query);
 </div>
 
 </div>
-
+<script>
+$(document).ready(function() {
+    $('#outletsTable').DataTable({
+        "paging": false,
+        "searching": true,
+        "ordering": true,
+        "info": true
+    });
+});
+</script>
 <?php
+include('sorters.php');
 ?>

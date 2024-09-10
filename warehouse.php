@@ -54,7 +54,7 @@ $result = mysqli_query($db, $query);
 
   <div class="card-body">
 
-      <table class="table table-bordered text-center text-dark" id="dataTable" width="100%" cellspacing="0">
+      <table id="warehouseAddTable" class="table table-bordered text-center text-dark" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="text-weight-bold">
             <th>Warehouse_Name</th>
@@ -100,3 +100,16 @@ $result = mysqli_query($db, $query);
   </div>
 </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#warehouseAddTable').DataTable({
+        "paging": false,
+        "searching": true,
+        "ordering": true,
+        "info": true
+    });
+});
+</script>
+<?php
+include('sorters.php')
+?>
